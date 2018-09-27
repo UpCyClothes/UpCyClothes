@@ -1,0 +1,63 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+.nav_menu ul{
+  list-style-type: none;
+  float: right;
+}
+.nav_menu ul li{
+  display: inline;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.nav_menu a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 80%;
+}
+/* Remove the jumbotron's default bottom margin */
+.jumbotron {
+ margin-bottom: 0;
+ background-color: #ffffff;
+ text-align: center;
+ font-size: 500%;
+ color: #028923;
+}
+
+.input-group{
+  margin-left: 800px;
+}
+/* Add a gray background color and some padding to the footer */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.container-fluid{
+  border-radius: 0;
+}
+
+.navbar-inverse { background-color: #DADBDB}
+.navbar-inverse .navbar-nav>.active>a:hover,.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { background-color: #DADBDB}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { background-color: #DADBDB}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #FFFFFF}
+.navbar-inverse { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #FFFFFF}
+.navbar-inverse .navbar-brand { color: #000000}
+.navbar-inverse .navbar-brand:hover { color: #3AC569}
+.navbar-inverse .navbar-brand:focus { color: #3AC569}
+
+.navbar-inverse .navbar-nav>li>a { color: #363636}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #3AC569}
+.navbar-inverse .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #363636}
+.navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #3AC569}
+.dropdown-menu>li>a { color: #363636}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #3ac569}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-top-color: #363636}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #363636}
+.navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
