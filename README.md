@@ -18,7 +18,8 @@ UpCycling + Clothes의 합성어로 본 프로젝트에서 제공하는 시스�
 분석중
 
 ## References
-
+* docs
+https://drive.google.com/drive/folders/1rnowsSdpXPjbONh4ec3q97Hk3LIvaoBY?usp=sharing
 
 ## Team Member
 * Dokyeong Kwon
