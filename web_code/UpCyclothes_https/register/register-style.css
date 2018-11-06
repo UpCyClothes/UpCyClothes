@@ -1,0 +1,297 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+.nav_menu ul{
+  list-style-type: none;
+}
+
+.nav_menu ul li{
+  display: inline;
+  margin-right: 10px;
+}
+
+.nav_menu a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 80%;
+}
+/* Remove the jumbotron's default bottom margin */
+footer {
+  background-color: #f2f2f2;
+  padding: 25px;
+}
+
+.container-fluid{
+  border-radius: 0;
+}
+
+.main_nav {margin-bottom: 10px}
+.main_nav .navbar-nav>.active>a:hover,.main_nav .navbar-nav>li>a:hover, .main_nav .navbar-nav>li>a:focus { background-color: #ffffff}
+.main_nav .navbar-nav>.active>a,.main_nav .navbar-nav>.open>a,.main_nav .navbar-nav>.open>a, .main_nav .navbar-nav>.open>a:hover,.main_nav .navbar-nav>.open>a, .main_nav .navbar-nav>.open>a:hover, .main_nav .navbar-nav>.open>a:focus { background-color: #ffffff}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #FFFFFF}
+.main_nav { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #FFFFFF}
+.main_nav .navbar-brand { color: #000000}
+.main_nav .navbar-brand:hover { color: #3AC569}
+.main_nav .navbar-brand:focus { color: #3AC569}
+
+.main_nav .navbar-nav>li>a { color: #363636}
+.main_nav .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #3AC569}
+.main_nav .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #363636}
+.main_nav .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #3AC569}
+.dropdown-menu>li>a { color: #363636}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #3ac569}
+.main_nav .navbar-nav>.dropdown>a .caret { border-top-color: #363636}
+.main_nav .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.main_nav .navbar-nav>.dropdown>a .caret { border-bottom-color: #363636}
+.main_nav .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+}
+.login-page .container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.login-page .container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.login-page .container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.login-page .container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.login-page .container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.login-page .container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.login-page .container .info span .fa {
+  color: #EF3B3A;
+}
+
+
+/*회원가입완료, 취소 관련 박스*/
+.contentstitle {
+  border-left: 4px solid #4CAF50;
+  font-size: 20px;
+}
+
+#rcategory {
+  margin-left: 10px;
+  border: 1px solid gray;
+  width: 100px;
+  height: 30px;
+}
+
+
+.info {
+  background-color: #FBFAFA;
+  width: 300px;
+  height: 50px;
+  color: gray;
+  font-size: 15px;
+}
+
+.registerinput {
+  width: 400px;
+  height: 50px;
+  font-size: 15px;
+}
+
+#bottomContents {
+  margin-top: 40px;
+  margin-bottom: 200px;
+  font-size: 15px;
+}
+
+.completebtn1 {
+  width: 200px;
+  height: 50px;
+  font-size: 17px;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  font-style: bold;
+  background-color: #3AC569;
+  cursor: pointer;
+
+}
+
+.completebtn2 {
+  width: 200px;
+  height: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+  font-style: bold;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+
+/*정보입력 텍스트*/
+
+.inputinfo {
+  margin: 10px;
+  border: 1px solid gray;
+  height: 30px;
+  width: 80px;
+}
+
+.inputinfo2 {
+  margin: 10px;
+  border: 1px solid gray;
+  height: 30px;
+  width: 200px;
+}
+
+
+/*정보입력 관련 버튼*/
+
+.inputbtn {
+  background-color: white;
+  height: 30px;
+  font-size: 13px;
+  color: black;
+  border: 1px solid gray;
+  cursor: pointer;
+}
+
+
+/*상세주소*/
+
+.postcodify_details {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: 1px solid gray;
+  height: 30px;
+  width: 280px;
+}
+
+.postcodify_address {
+  width: 280px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: 1px solid gray;
+  height: 30px;
+}
+
+.postcodify_postcode5 {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  border: 1px solid gray;
+  height: 30px;
+}
+
+#line {
+  border-top: 1px solid gray;
+}
+
+#joinClick {
+  width: 320px;
+  border-top: 1px solid gray;
+  margin-top: 10px;
+}
+
+#joinBtn {
+  margin-top: 10px;
+  margin-bottom: 200px;
+  background-color: gray;
+  height: 30px;
+  font-size: 13px;
+  color: white;
+  width: 100px;
+  border: none;
+  cursor: pointer;
+}
+
+#loginBtn {
+  color: white;
+  height: 50px;
+  width: 300px;
+  border: none;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  background: #FFAAAA;
+  font-size: 17px;
+  cursor: pointer;
+}
