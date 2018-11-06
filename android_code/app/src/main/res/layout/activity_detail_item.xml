@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="Login"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="register"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_material"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="Material Page"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_board"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="Social"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_mypage"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="mypage"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/l1"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/l3">
+    <LinearLayout
+        android:id="@+id/detailL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/l3"
+        android:layout_below="@id/l1"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/thumbs"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/nameTV"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:hint="item name here"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:id="@+id/priceTV"
+            android:hint="item price here"/>
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:id="@+id/amountET"
+            android:hint="수량을 입력해주세요."/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/cartImg"
+                android:layout_weight="1"
+                android:src="@drawable/cart"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/orderBtn"
+                android:layout_weight="1"
+                android:background="@color/colorGray"
+                android:text="주문"
+                android:textColor="@color/colorBlack"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/messengerBtn"
+                android:layout_weight="1"
+                android:background="@color/colorGray"
+                android:text="문의"
+                android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="상세설명"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:background="@drawable/rect"/>
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="center"
+            android:id="@+id/detailImg"/>
+    </LinearLayout>
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_back"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="back"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="next"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="home"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_notice"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="notice"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_cart"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="my cart"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+</RelativeLayout>

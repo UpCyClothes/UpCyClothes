@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    >
+
+    <LinearLayout
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/bar"
+            android:id="@+id/bar"/>
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/alarm"
+            android:id="@+id/alarm"/>
+        <TextView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:textSize="30sp"
+            android:text="UpCyClothes"
+            android:id="@+id/logotitle"
+            android:textColor="@color/colorGreen"
+            android:textAlignment="center"
+            android:gravity="center_vertical"/>
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/cart1"
+            android:id="@+id/cart"/>
+
+        <ImageView
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/person"
+            android:id="@+id/person"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/logotitleL"
+        android:layout_below="@+id/l1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/logo_ucc"
+            android:id="@+id/UCClogo"
+            android:layout_marginLeft="10dp"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/titleL"
+            android:orientation="vertical"
+            android:gravity="center"
+            >
+            <TextView
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textSize="30sp"
+                android:layout_marginTop="15dp"
+                android:text="UpCyClothes"
+                android:id="@+id/title"
+                android:textColor="@color/colorGreen"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:text="UPCYCLING IDEAS AND INSPIRATION"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="12dp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/l2"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_below="@+id/logotitleL"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_cloth"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="clothes"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_bags"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="bags"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_accessories"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="accessories"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_shoes"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="shoes"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_wallet"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="Jewelry"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/l2"
+        android:layout_above="@id/l3"
+        ></android.support.v4.view.ViewPager>
+
+    <LinearLayout
+        android:id="@+id/l3"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+
+        <Button
+            android:id="@+id/btn_home"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="home"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_alarm"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="alarm"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_cart"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="my cart"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/btn_mypage"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/colorGray"
+            android:text="my page"
+            android:textSize="10dp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>
