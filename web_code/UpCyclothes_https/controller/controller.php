@@ -92,7 +92,7 @@
             echo("<script>location.replace('../index.php');</script>");
         }else{
           //회원가입 실패!
-          	echo("회원가입에 실패하였습니다. 다시 시도해주세요!");
+          	echo("<script>alert('회원가입에 실패하였습니다. 다시 시도해주세요!');</script>");
         }
     }
     else{
@@ -100,6 +100,37 @@
     }
   }
 
+//$password,$type,$nickname,$address1,$address2,$zipCode,$tel,$email,$reception,$tag1,$tag2
+function modifyUser($address1,$address2,$zipCode){
+  session_start();
+  if(isset($_SESSION['userId'])){
+    $user_id = $_SESSION['userId'];
+    $mysqli = mysqli_connect( "localhost", "root", "316011" ,"upcyclothes_db");
+    $mysqli->set_charset('utf8');
+    if($mysqli){
+
+      $updateSQL = "UPDATE user SET address1 ='".$address1."'";
+      $updateSQL = $updateSQL.", address2 ='".$address2."'";
+      $updateSQL = $updateSQL.", zipcode ='".$zipCode."'";
+      $updateSQL = $updateSQL." WHERE userID ='".$user_id."'";
+      //echo $updateSQL;
+     $result = mysqli_query($mysqli,$updateSQL);
+
+      if($result){
+           //회원가입 성공!
+           echo("<script>alert('정보 변경 성공.');</script>");
+           echo("<script>location.replace('../index.php');</script>");
+        }else{
+          echo("<script>alert('정보 변경 실패.');
+            history.back();</script>");
+        }
+    }else{
+        return 'sorry. DataBase is not connection.';
+    }
+    }else{
+      echo("<script>alert('정보를 확인 후 다시 시도해주세요.');</script>");
+    }
+}
   function checkLogin(){
       session_start();
       if(isset($_SESSION['userId']) && isset($_SESSION['userPassword'])){
@@ -124,7 +155,6 @@
       if($mysqli){
       $sql = "SELECT usertype FROM user WHERE userID ='".$user_id."' and userPW = '".$user_pw."'";
 
-
       $result = mysqli_query($mysqli,$sql);
       $row = mysqli_fetch_array($result);
 
@@ -138,6 +168,16 @@
       }else{
               return false;
       }
+    }else{
+      return false;
+    }
+  }
+
+  function checkID(){
+    session_start();
+    if(isset($_SESSION['userId']) && isset($_SESSION['userPassword'])){
+      $user_id = $_SESSION['userId'];
+      return $user_id;
     }else{
       return false;
     }

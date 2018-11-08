@@ -6,8 +6,7 @@
     <div id="top-nav">
       <ul>
         <li><a href="../member/logout.php">로그아웃</a></li>
-        <li><a href="../alarm/alarm.php">알림</a></li>
-        <li><a href="../messenger/messenger.php">메시지</a></li>        
+        <li><a href="../messenger/messenger.php">메시지</a></li>
         <li><a href="../wishlist/wishlist.php">장바구니</a></li>
         <li><a href="../shoplist/shoplist.php">주문조회</a></li>
         <?php

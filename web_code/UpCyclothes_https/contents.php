@@ -41,36 +41,40 @@
   <br>
   </div>
   <div class="container">
-    <h4 style="text-align:center;   font-weight: bold;  font-size: 50px;">This Week Item</h4>
+    <h4 style="text-align:center;   font-weight: bold;  font-size: 35px;">This Week New Item</h4>
     <br>
     <div class="row">
       <?php
       include '../../control/contents-controller.php';
-      $array = getproduct(1);
+      $array = getNewProduct();
       $repeatNum = sizeof($array);
       $count=0;
-      echo "<div class=\"row\">";
-        while($repeatNum>0){
-          $productName = boardName($array[$count]);
-          $productPrice = boardPrice($array[$count]);
-          $url = "../";
-          $c = $url.getthumbnail($array[$count]);
-          $p_id = $array[$count];
-          echo "<div class=\"col-md-4\">";
-          echo "<div class=\"thumbnail\">";
-          echo "<a href=\"detail-board.php?id=$p_id\">";
-          echo "<img src=\"$c\" alt=\"Lights\" style=\"width:100%\">";
-          echo "<div class=\"caption\" style=\"text-align:center\">";
-          echo "<p>$productName</p>";
-          echo "<p> $productPrice 원</p>";
-          echo "</div>";
-          echo "</a>";
-          echo "</div>";
-          echo "</div>";
-          $repeatNum = $repeatNum-1;
-          $count = $count+1;
-        }
-      echo "</div>";
+      if($repeatNum==0){
+          echo "<p>새로운 Item이 없습니다.</p>";
+      }else{
+        echo "<div class=\"row\">";
+          while($repeatNum>0){
+            $productName = newBoardName($array[$count]);
+            $productPrice = newBoardPrice($array[$count]);
+            $url = "../";
+            $c = $url.getNewthumbnail($array[$count]);
+            $p_id = $array[$count];
+            echo "<div class=\"col-md-4\">";
+            echo "<div class=\"thumbnail\">";
+            echo "<a href=\"detail-board.php?id=$p_id\">";
+            echo "<img src=\"$c\" alt=\"Lights\" style=\"width:100%\">";
+            echo "<div class=\"caption\" style=\"text-align:center\">";
+            echo "<p>$productName</p>";
+            echo "<p> $productPrice 원</p>";
+            echo "</div>";
+            echo "</a>";
+            echo "</div>";
+            echo "</div>";
+            $repeatNum = $repeatNum-1;
+            $count = $count+1;
+          }
+        echo "</div>";
+      }
       ?>
     </div>
   </div>

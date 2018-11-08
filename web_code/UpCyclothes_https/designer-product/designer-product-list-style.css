@@ -1,3 +1,28 @@
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+.nav_menu ul{
+  list-style-type: none;
+}
+
+.nav_menu ul li{
+  display: inline;
+  margin-right: 10px;
+}
+
+.nav_menu a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 80%;
+}
+/* Remove the jumbotron's default bottom margin */
+footer {
+  background-color: #f2f2f2;
+}
+
 /* Sub Navigation CSS part*/
 .side-nav-title{
   background-color: #3AC569;
@@ -34,22 +59,24 @@ a:link { color: #5D5D5D; text-decoration: none;}
 a:visited { color: #5D5D5D; text-decoration: none;}
 a:hover { color: #3AC569; text-decoration: none;}
 
-.nav-submenu-now{
-  margin-top: 10px;
-}
-
-.nav-submenu-now a:link { color: #3AC569; text-decoration: none;}
-.nav-submenu-now a:visited { color: #3AC569; text-decoration: none;}
-.nav-submenu-now a:hover { color: #5D5D5D; text-decoration: none;}
-
 /* Contents CSS part*/
 
-.alarm-contents{
+.my-page-contents{
   margin-left: 30px;
   float: left;
   width: 800px;
 }
 
+
+.my-page-title{
+  float: left;
+  width: 100%;
+  height: 70px;
+  color: white;
+  padding: 20px;
+  font-size: 20px;
+  background-color:#5D5D5D;
+}
 
 .my-page-sub{
   float: left;
@@ -57,19 +84,25 @@ a:hover { color: #3AC569; text-decoration: none;}
   margin-bottom: 30px;
 }
 
-.alarm-title{
+.my-page-title-sub{
+  margin-top: 10px;
   float: left;
   width: 100%;
   height: 50px;
   padding: 10px;
-  border-bottom: 2px solid #555;
+  border-bottom: 1px solid #555;
   padding-bottom: 8px;
-  margin-bottom: 30px;
+
 }
 
-.alarm-title span{
+.my-page-title-sub span{
   font-size: 17px;
   font-weight: bold;
+}
+
+.my-page-title-sub a{
+  float: right;
+  font-size: 13px;
 }
 
 .empty-msg{
@@ -77,64 +110,19 @@ a:hover { color: #3AC569; text-decoration: none;}
   padding: 60px 0;
   display: block;
   color: #999;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   width: 100%;
 }
 
-.no-item{
-  text-align: center;
-}
 
-.no-item img{
-  margin-top: 30px;
-}
 
-.no-item .btn{
-  font-size: 15px;
-  font-weight: 400;
-}
-
-.no-item .btn-default {
-    color: #333;
-    background-color: #fff;
-    border-color: #24753f;
-    height: 40px;
-    width: 160px;
-}
-
-.no-item .btn:hover{
-  background-color: #fff;
-}
-
-/* Remove the navbar's default rounded borders and increase the bottom margin */
-.navbar {
-  margin-bottom: 50px;
-  border-radius: 0;
-}
-
-.nav_menu ul{
-  list-style-type: none;
-}
-
-.nav_menu ul li{
-  display: inline;
-  margin-right: 10px;
-}
-
-.nav_menu a{
-  text-decoration: none;
-  color: #000000;
-  font-size: 80%;
-}
-/* Remove the jumbotron's default bottom margin */
-footer {
-  background-color: #f2f2f2;
-}
+/*Other CSS Part*/
 
 .container-fluid{
   border-radius: 0;
 }
+
 .completebtn1 {
   width: 200px;
   height: 50px;

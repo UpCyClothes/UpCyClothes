@@ -21,6 +21,7 @@ function checkId(userId) {
 
 
 function checkNickName(userNickName) {
+    
     if (userNickName == "") {
           alert("닉네임을 입력해 주세요.");
     } else {
@@ -46,4 +47,8 @@ function checkNumber(chr){
       alert("숫자만 입력하세요");
       chr.value="";
   }
+}
+
+function testing(){
+      alert("Success");
 }

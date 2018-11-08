@@ -24,7 +24,7 @@
       </b>
       <br>
       <div class="nav-submenu">
-        <a class="sub-a-tag" href="../alarm/alarm.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;알림</a>
+        <a class="sub-a-tag" href="../messenger/messenger.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메시지</a>
       </div>
       <div class="nav-submenu">
         <a class="sub-a-tag" href="../notice/notice.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공지사항</a>
@@ -50,10 +50,16 @@
         <span>&nbsp;내 정보</span>
       </b>
       <div class="nav-submenu">
-        <a class="sub-a-tag" href="../member/modify.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;회원정보</a>
+        <a class="sub-a-tag" href="../member/modify.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주소록(배송지)수정</a>
       </div>
-      <div class="nav-submenu">
-        <a class="sub-a-tag" href="#">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주소(배송지)관리</a>
-      </div>
+      <?php
+      include '../../control/controller.php';
+
+      if(checkType()==true){
+        echo "<div class=\"nav-submenu\">";
+        echo "<a class=\"sub-a-tag\" href=\"../designer-product/designer-product-list.php\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상품 등록 현황</a>";
+        echo "</div>";
+      }
+       ?>
   </div>
 </aside>

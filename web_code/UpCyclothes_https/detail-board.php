@@ -66,25 +66,39 @@ function upBtn() {
   }
   }
 
-  function showPopup(){
-      var product_num = document.getElementById("pnumber").value;
-      if(parseInt(product_num)>0){
-        if(document.all.spot.style.visibility=="hidden") {
-            document.all.spot.style.visibility="visible";
-            return false;
-      }
-      if(document.all.spot.style.visibility=="visible") {
-             document.all.spot.style.visibility="hidden";
-             return false;
-      }
+function pop_action($category){
+    if($category==0){
+      var popup = document.getElementById("popup");
+      popup.style.visibility = "hidden";
+    }else if($category==1){
 
+      var p_id = document.getElementById("p_id").value;
+      var p_number = document.getElementById("pnumber").value;
+      var o_price = document.getElementById("originprice").value;
 
-          // window.open("cart-popup.php", "My Cart", "width=400, height=300, left=700, top=250");
-
+      if(p_number<=0){
+        alert("옵션을 선택하세요!");
       }else{
-        alert("수량을 정확히 입력하세요.");
+        $.ajax({
+          url: 'popController.php',
+          type: 'post',
+          data: {
+            'p_id': p_id,
+            'p_number' : p_number,
+            'o_price' : o_price
+          },
+          dataType: 'html',
+          success: function(data) {
+            alert(data); // 결과 텍스트를 경고창으로 보여준다.
+          },
+          error: function(data) {
+            alert("server-error : try again");
+          }
+        });
       }
-
+    }else if($category==2){
+        alert("준비중입니다!");
+    }
   }
 
 </script>
@@ -118,7 +132,7 @@ function upBtn() {
   echo "<div class=\"col-md-4\"  style=\"text-align:center; margin-left:100px\">";
   echo "<img class=\"img-member\" src=\"$url\" style=\"width : 350px; height : 350px\">";
   echo "</div>";
-
+  echo "<input type=\"hidden\" id=\"p_id\" value=\"$p_id\">";
   echo "<div class=\"col-md-5\">";
   echo "<h4><label style=\"font-size:20px\">$name</label></h4>";
   echo "<h5><label style=\"font-size:15px\">$designer</label></h5>";
@@ -131,6 +145,7 @@ function upBtn() {
   echo "<td class=\"memberinput\" style=\"margin-left:30px;\">";
   echo "<button type=\"button\" onclick=\"downBtn()\" name=\"down\">-</button>";
   echo "<input type=\"hidden\" id=\"originprice\" value=\"$price1\">";
+
   echo "<input id=\"pnumber\" style=\"width:50px; text-align:center\" value=\"0\" readonly>";
   echo "<button type=\"button\" onclick=\"upBtn()\" name=\"up\">+</button>";
   echo "</td>";
@@ -150,9 +165,10 @@ function upBtn() {
   //Button
   echo "<table>";
   echo "<td>";
-  echo "<input class=\"btn btn-warning btn-lg\" style=\"margin-right: 10px \" onclick=\"showPopup()\" type=\"button\" value=\"장바구니\">";
-  echo "<input class=\"btn btn-success btn-lg\" style=\"margin-right: 10px \" type=\"button\" value=\"주문하기\">";
-  echo "<input class=\"btn btn-primary btn-lg\"  type=\"button\" value=\"톡톡문의\">";
+  echo "<input type=\"hidden\" id=\"productID\" value=\"$p_id\">";
+  echo "<input class=\"btn btn-warning btn-lg\" style=\"margin-right: 10px \" onclick=\"pop_action(1)\" type=\"submit\" value=\"장바구니\">";
+  echo "<input class=\"btn btn-success btn-lg\" style=\"margin-right: 10px \" onclick=\"pop_action(2)\" type=\"button\" value=\"주문하기\">";
+  echo "<input class=\"btn btn-primary btn-lg\" onclick=\"pop_action(2)\" type=\"button\"  value=\"톡톡문의\">";
   echo "</td>";
   echo "</table>";
   echo "</div>";
@@ -172,19 +188,8 @@ function upBtn() {
 
   ?>
   </div>
-  <!-- width=400, height=300, left=700, top=250 -->
-  <div id="spot" style="text-align:center;border: 1px solid #000; background-color: #ffffff; width:300px; height:300px; position: absolute; left: 700px; top: 250px; visibility: hidden;">
-    <div class="close" style="background-color: #666;"><a onclick="$('#spot').hide();"><img src="http://img.echosting.cafe24.com/skin/base_ko_KR/common/btn_close.png" alt="닫기" /></a></div>
-    <h1>장바구니 담기</h1>
-    <div class="content">
-        <p>장바구니에 상품이 정상적으로 담겼습니다.</p>
-    </div>
-    <div class="btnArea center">
-        <a href="../shoplist/shoplist.php"><img src="../icon-16/btn_go_basket.gif" alt="장바구니 이동" /></a>
-        <a onclick="$('#spot').hide();"><img src="../icon-16/btn_continue_shopping.gif" alt="쇼핑계속하기" complete="complete" /></a>
-    </div>
 
-  </div>
+
 
   <div id="footer"></div>
 

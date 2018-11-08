@@ -14,9 +14,7 @@
           $productPrice = boardPrice($array[$count]);
           $url = "../";
           $c = $url.getthumbnail($array[$count]);
-          if($repeatNum%4==0){
-              echo "<div class=\"row\">";
-          }
+
           $p_id = $array[$count];
           echo "<div class=\"col-md-4\">";
           echo "<div class=\"thumbnail\">";
@@ -29,9 +27,7 @@
           echo "</a>";
           echo "</div>";
           echo "</div>";
-          if($repeatNum%4==0){
-              echo "</div>";
-          }
+
           $repeatNum = $repeatNum-1;
           $count = $count+1;
         }

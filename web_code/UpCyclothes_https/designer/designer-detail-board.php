@@ -43,6 +43,18 @@
       document.getElementById("totalKG").innerHTML = (parseInt(number) + 1);
     }
     }
+
+    function pop_action($category){
+      if($category==0){
+        var popup = document.getElementById("popup");
+        popup.style.visibility = "hidden";
+      }else if($category==1){
+        var popup = document.getElementById("popup");
+        popup.style.visibility = "visible";
+      }else if($category==2){
+        alert("준비중입니다!");
+      }
+    }
   </script>
 
   <?php
@@ -100,8 +112,7 @@
   echo "<br><br>";
   echo "<table>";
   echo "<td>";
-  echo "<input class=\"btn btn-warning btn-lg\" style=\"margin-right: 10px \" type=\"button\" value=\"장바구니\">";
-  echo "<input class=\"btn btn-success btn-lg\" style=\"margin-right: 10px \" type=\"button\" value=\"주문하기\">";
+  echo "<input class=\"btn btn-success btn-lg\" style=\"margin-right: 10px \"onclick=\"pop_action(2)\" type=\"button\" value=\"주문하기\">";
   echo "</td>";
   echo "</table>";
 
@@ -111,6 +122,19 @@
   ?>
 
   <br><br>
+  <div id="popup" style="border: 1px solid #000; background-color: #ffffff; width:300px; height:300px; position: absolute; left: 700px; top: 250px; visibility: hidden;">
+    <div style="padding: 5px; text-align:right; background-color: #666;"><a onclick="pop_action(0)"><img src="../icon-64/cancle.png" alt="닫기" /></a></div>
+    <br><br>
+    <h4 style=" text-align:center;">장바구니 담기</h4>
+    <div class="content"  style="text-align:center;">
+      <img src="../icon-64/cart-in.png" alt="">
+        <p>장바구니에 상품이 정상적으로 담겼습니다.</p>
+    </div>
+    <div class="btnArea center"  style="text-align:center;">
+        <a href="../shoplist/shoplist.php"><img src="../icon-64/btn_go_basket.gif" alt="장바구니 이동" /></a>
+        <a onclick="pop_action(0)"><img src="../icon-64/btn_continue_shopping.gif" alt="쇼핑계속하기" complete="complete" /></a>
+    </div>
+  </div>
   <div id="footer"></div>
 
 </body>

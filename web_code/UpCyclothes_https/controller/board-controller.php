@@ -44,7 +44,6 @@ if($mysqli){
     return 'sorry. DataBase is not connection.';
   }
   mysql_close($mysqli);
-
 }
 
 function getBoardWriter(){
