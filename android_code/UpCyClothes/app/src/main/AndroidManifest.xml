@@ -42,7 +42,11 @@
         <activity android:name=".orderItem" />
         <activity android:name=".DetailCommunity" />
         <activity android:name=".MessengerActivity" />
-        <activity android:name=".QuestionActivity"></activity>
+        <activity android:name=".QuestionActivity" />
+        <activity android:name=".MessageListActivity" />
+        <activity android:name=".DetailMessage" />
+        <activity android:name=".AnswerActivity" />
+        <activity android:name=".WriteAnswer"></activity>
     </application>
 
 </manifest>

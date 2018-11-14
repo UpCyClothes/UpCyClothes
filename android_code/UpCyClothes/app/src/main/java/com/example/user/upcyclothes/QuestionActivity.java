@@ -101,7 +101,7 @@ public class QuestionActivity extends AppCompatActivity {
                         }
                     }
                 };
-                QuestionRequest questionRequest = new QuestionRequest(item_id,subject,date,content,"",userid,item_designer,readOrNot, responseListener);
+                QuestionRequest questionRequest = new QuestionRequest(item_id,date,subject,content,"",userid,item_designer,readOrNot, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(QuestionActivity.this);
                 queue.add(questionRequest);
             }

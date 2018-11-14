@@ -108,11 +108,21 @@ public class DetailActivity extends AppCompatActivity {
                             .show();
 
                 }
-                else{
+                else if(cnt==0){
+                        Log.v("수량이  ",cnt+"이다.");
+                        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(DetailActivity.this);
+                        dialog = builder.setMessage("수량이 0이면 장바구니에 추가할 수 없습니다!").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+
+                            }
+                        }).create();
+                        dialog.show();
+                    }
+                    //서버에 넘겨줘야 할 정보 : productID, user_ID,designer,productName,count,price,productURL
+                    else {
                     //로그인이 됐으면
                     user_ID=MainActivity.userID;
-                    //서버에 넘겨줘야 할 정보 : productID, user_ID,designer,productName,count,price,productURL
-//
                     Response.Listener<String> responseListener = new Response.Listener<String>() {
 
                         @Override

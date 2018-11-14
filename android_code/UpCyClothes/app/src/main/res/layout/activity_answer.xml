@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+
+    <LinearLayout
+        android:id="@+id/matL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/l1"
+        android:gravity="start"
+        android:background="@color/colorMain"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/materialTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="       문의에 답변하기"
+            android:textColor="@color/colorWhite"
+            android:textSize="25dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idTV"
+        android:layout_below="@id/matL"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:text="디자이너이름 들어가는곳"
+        android:textSize="30dp"
+        android:textColor="@color/colorBlack"
+        />
+    <ListView
+        android:id="@+id/listview"
+        android:layout_below="@id/idTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="spacingWidth"
+        android:verticalSpacing="10dp" />
+
+
+
+
+
+</RelativeLayout>

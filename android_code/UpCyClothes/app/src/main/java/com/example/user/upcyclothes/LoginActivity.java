@@ -22,7 +22,9 @@ import org.json.JSONObject;
 
 
 public class LoginActivity extends Activity {
-    //IDInformation id;
+
+    static boolean designerFlag=false;
+    static String designNick;
     private String user_id, user_pw;
     private String success="0";
     private Button loginBtn;
@@ -92,9 +94,10 @@ public class LoginActivity extends Activity {
 
                 }
                 else {
+                    Log.v("로그인정보 잘못됨.","success");
                     //실패시 회원정보를 확인하세요! 를 보여준다.
-                    chkTV.setVisibility(View.VISIBLE);
                     chkTV.setText(success);
+                    chkTV.setVisibility(View.VISIBLE);
 
                 }
 
@@ -170,8 +173,13 @@ public class LoginActivity extends Activity {
                 else { //status:OK
                     //Log.v("status OK로 들어옴",": ");
                     list=root.getString("memo");
+                    designNick=root.getString("nickname");
+                    if(root.getString("usertype").equals("0")){
+                        designerFlag=true;
+                    }
+                    else designerFlag=false;
                 }
-                //Log.v("json 파싱결과", list+"");
+                Log.v("login json 파싱결과", list+"");
             } catch (JSONException e) {
                 e.printStackTrace();
             }

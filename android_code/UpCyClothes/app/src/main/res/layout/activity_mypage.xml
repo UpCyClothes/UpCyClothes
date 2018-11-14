@@ -59,6 +59,9 @@
             android:text="   주문 내역 조회"
             android:id="@+id/orderBtn"
             android:textAlignment="textStart"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,6 +69,17 @@
             android:text="   1:1 문의"
             android:id="@+id/messengerBtn"
             android:textAlignment="textStart"/>
+
+            <ImageView
+                android:id="@+id/newBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/newitem"
+                android:visibility="invisible" />
+        </RelativeLayout>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -73,6 +87,29 @@
             android:text="   로그아웃"
             android:id="@+id/logoutBtn"
             android:textAlignment="textStart"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/rl1"
+            android:visibility="invisible">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:text="   1:1 문의 답변"
+                android:id="@+id/answerBtn"
+                android:textAlignment="textStart"/>
+
+            <ImageView
+                android:id="@+id/newBtn4Answer"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/newitem"
+                android:visibility="invisible" />
+        </RelativeLayout>
 
 </LinearLayout>
 </LinearLayout>

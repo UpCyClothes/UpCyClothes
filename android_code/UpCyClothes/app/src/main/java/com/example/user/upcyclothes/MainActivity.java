@@ -91,7 +91,6 @@ public class MainActivity extends AppCompatActivity
        // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
         final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);
         final ImageView personBtn= (ImageView) findViewById(R.id.personBtn);
-        final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
         //새로운 문의가 있을 경우에 보여지고 없으면 안보여진다.
 
         //툴바 버튼리스너
@@ -135,17 +134,7 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        alarmBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                /*Go to Next Activity*/
-                //1:1문의 액티비티로 간다.
-                Intent intent = new Intent(MainActivity.this, ClothActivity.class);
 
-                startActivity(intent);
-
-            }
-        });
         GridView gridview = (GridView)findViewById(R.id.gridview);
 
         GridAdapter adapter = new GridAdapter(this, p_name_list, p_price_list, p_url_list);

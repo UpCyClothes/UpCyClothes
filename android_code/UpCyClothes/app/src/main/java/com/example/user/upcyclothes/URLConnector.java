@@ -41,7 +41,7 @@ public class URLConnector extends Thread {
         this.sessID=sessID;
         Log.v("세션있는","url");
     }
-    public URLConnector(String url, String phpName, String postpara,boolean forLogin) {
+    public URLConnector(String url, String phpName, String postpara, boolean forLogin) {
         URL = url+phpName;
         postParameters = postpara;
         Log.v("파라미터",postParameters);
