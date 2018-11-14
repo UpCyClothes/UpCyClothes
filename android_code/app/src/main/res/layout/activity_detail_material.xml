@@ -1,68 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
 
-    <LinearLayout
+
+
+
+    <include
+        layout="@layout/toolbar"
         android:id="@+id/l1"
         android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="Login"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="register"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_material"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="Material Page"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_board"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="Social"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_mypage"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="mypage"
-            android:textSize="10dp" />
+        android:layout_height="?attr/actionBarSize" />
 
 
-    </LinearLayout>
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_above="@+id/l3"
         android:layout_below="@+id/l1"
-        android:layout_marginTop="20dp"
-        android:layout_above="@+id/l3">
+        android:layout_marginTop="20dp">
+
+
         <LinearLayout
             android:id="@+id/detailL"
             android:layout_width="fill_parent"
@@ -72,99 +32,72 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/thumbs"
-                />
-            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
                 android:id="@+id/nameTV"
-                android:gravity="center"
-                android:textSize="30dp"
-                android:hint="item name here"/>
-            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="20dp"
+                android:hint="item name here"
+                android:textSize="30dp" />
+
+            <TextView
                 android:id="@+id/remainAmountTV"
-                android:hint="remain amount here"/>
-            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="remain amount here"
+                android:textSize="20dp" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textSize="20dp"
-                android:id="@+id/amountET"
-                android:hint="수량을 입력해주세요. (KG)"/>
-
-
-                <Button
-                    android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rect"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/minus"
+                    android:id="@+id/minusBtn"/>
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/orderBtn"
-                    android:layout_weight="1"
-                    android:background="@color/colorGray"
-                    android:text="주문"
-                    android:textColor="@color/colorBlack"/>
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textSize="30dp"
+                    android:id="@+id/amountET"
+                    android:text="0"/>
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/plus"
+                    android:layout_marginRight="5dp"
+                    android:id="@+id/plusBtn"/>
+            </LinearLayout>
+            <Button
+                android:id="@+id/orderBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@color/colorGray"
+                android:layout_marginTop="5dp"
+                android:text="주문"
+                android:textColor="@color/colorBlack" />
 
         </LinearLayout>
+
     </ScrollView>
 
 
 
-    <LinearLayout
-        android:id="@+id/l3"
-        android:layout_width="match_parent"
-        android:layout_height="32dp"
-        android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/btn_back"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="back"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_next"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="next"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_home"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="home"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_notice"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="notice"
-            android:textSize="10dp" />
-
-        <Button
-            android:id="@+id/btn_cart"
-            android:layout_width="0dip"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/colorGray"
-            android:text="my cart"
-            android:textSize="10dp" />
-
-
-    </LinearLayout>
 </RelativeLayout>

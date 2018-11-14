@@ -1,19 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/rect">
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/rect"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/nameTV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="name"
-        />
+        android:text="게시글의 제목"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"/>
+    <TextView
 
-
+        android:id="@+id/dateTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="게시날짜" />
 
 </LinearLayout>

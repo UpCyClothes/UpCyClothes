@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_new"
+            android:title="NEW FOR U"
+            />
+        <item
+            android:id="@+id/nav_clo"
+            android:title="CLOTHES" />
+        <item
+            android:id="@+id/nav_bag"
+            android:title="BAGS" />
+        <item
+            android:id="@+id/nav_acce"
+            android:title="ACCESORIES" />
+        <item
+            android:id="@+id/nav_shoes"
+            android:title="SHOES" />
+        <item
+            android:id="@+id/nav_jewelry"
+            android:title="JEWELRY" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_material"
+            android:title="MATERIAL" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_notice"
+            android:title="NOTICE" />
+        <item
+            android:id="@+id/nav_commu"
+            android:title="COMMUNITY" />
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_messen"
+            android:title="1:1 문의 내역" />
+
+
+    </group>
+
+</menu>

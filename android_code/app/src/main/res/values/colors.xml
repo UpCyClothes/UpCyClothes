@@ -9,6 +9,7 @@
     <color name="colorGray">#dadbdb</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorMain">#1A3627</color>
 
     <color name="colorWarning">#ED00CB</color>
 </resources>

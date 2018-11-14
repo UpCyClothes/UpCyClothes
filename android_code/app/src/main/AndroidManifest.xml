@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.user.userapp">
+    package="com.example.user.upcyclothes">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -12,23 +12,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-        <activity android:name=".homeActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignupActivity" />
+        <activity android:name=".ClothActivity" />
+        <activity android:name=".BagActivity" />
+        <activity android:name=".AccActivity" />
+        <activity android:name=".ShoesActivity" />
+        <activity android:name=".NewActivity" />
+        <activity android:name=".JewActivity" />
+        <activity android:name=".DetailActivity" />
+        <activity android:name=".GridItem" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".materialActivity" />
-        <activity android:name=".NoticeActivity" />
-        <activity android:name=".mypageActivity" />
+        <activity android:name=".SignupActivity" />
         <activity android:name=".DaumWebViewActivity" />
-        <activity android:name=".DetailItem" />
+        <activity android:name=".MaterialActivity" />
         <activity android:name=".DetailMaterial" />
+        <activity android:name=".MycartActivity" />
+        <activity android:name=".MyOrderActivity" />
+        <activity android:name=".MypageActivity" />
         <activity android:name=".CommunityActivity" />
-        <activity android:name=".Home2Activity"></activity>
+        <activity android:name=".NoticeActivity" />
+        <activity android:name=".DetailNotice" />
+        <activity android:name=".cartItem" />
+        <activity android:name=".orderItem" />
+        <activity android:name=".DetailCommunity" />
+        <activity android:name=".MessengerActivity" />
+        <activity android:name=".QuestionActivity"></activity>
     </application>
 
 </manifest>

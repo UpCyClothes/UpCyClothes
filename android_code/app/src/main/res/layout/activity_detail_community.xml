@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="       COMMUINITY"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp"
+        android:background="@color/colorMain"
+        />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/weeklyBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="이달의 작가"
+            android:textSize="20dp"
+            android:textColor="#1D5C30" />
+
+        <Button
+            android:id="@+id/campaignBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:textSize="20dp"
+            android:text="캠페인"
+            android:textColor="#1D5C30" />
+
+    </LinearLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content 제목"
+            android:layout_marginTop="10dp"
+            android:id="@+id/subjectTV"
+            android:textSize="20dp"
+            android:textColor="@color/colorBlack"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="content 생성 날짜"
+            android:layout_marginTop="10dp"
+            android:id="@+id/dateTV"/>
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="content 본문"-->
+            <!--android:id="@+id/contentTV"-->
+            <!--android:textColor="@color/colorBlack"/>-->
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:scaleType="center"
+            android:id="@+id/Img"
+        />
+ +
+    </LinearLayout>
+
+</ScrollView>
+</LinearLayout>

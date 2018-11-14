@@ -7,17 +7,18 @@
         <item>019</item>
     </string-array>
     <string-array name = "tagForDisigner">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>면</item>
+        <item>가죽</item>
+        <item>모</item>
+        <item>실크</item>
+        <item>폴리에스테르</item>
+        <item>나일론</item>
     </string-array>
     <string-array name = "tagForCustomer">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
+        <item>옷</item>
+        <item>가방</item>
+        <item>악세사리</item>
+        <item>신발</item>
+        <item>쥬얼리</item>
     </string-array>
 </resources>
