@@ -42,6 +42,8 @@ a:hover { color: #3AC569; text-decoration: none;}
 .nav-submenu-now a:visited { color: #3AC569; text-decoration: none;}
 .nav-submenu-now a:hover { color: #5D5D5D; text-decoration: none;}
 
+
+
 /* Contents CSS part*/
 
 .alarm-contents{
@@ -64,7 +66,6 @@ a:hover { color: #3AC569; text-decoration: none;}
   padding: 10px;
   border-bottom: 2px solid #555;
   padding-bottom: 8px;
-  margin-bottom: 30px;
 }
 
 .alarm-title span{
@@ -72,9 +73,32 @@ a:hover { color: #3AC569; text-decoration: none;}
   font-weight: bold;
 }
 
+/*Contents of Write-QNA part*/
+.col-sm-8 img {
+    margin-top: 200px;
+}
+
+.col-sm-4{
+  overflow:auto;
+  float: left;
+  height: 550px;
+  border-right: 2px solid #f1f1f1;
+  padding: 10px;
+}
+.designer-name{
+  height: 60px;
+  float: left;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 2px solid #f1f1f1;
+}
+.designer-name span{
+  font-size: 15px;
+  margin-left: 10px;
+}
 .empty-msg{
   float: left;
-  padding: 60px 0;
+  padding: 60px;
   display: block;
   color: #999;
   font-size: 15px;
@@ -84,18 +108,32 @@ a:hover { color: #3AC569; text-decoration: none;}
 
 .no-item{
   text-align: center;
+
 }
 
 .no-item img{
-  margin-top: 30px;
+  margin-top:70px;
+}
+.col-sm-4{
+  height: 600px;
+}
+.col-sm-8{
+  overflow:auto;
+  height: 600px;
+  text-align: center;
+  padding: 10px;
 }
 
-.no-item .btn{
+.col-sm-8 .btn{
   font-size: 15px;
   font-weight: 400;
 }
 
-.no-item .btn-default {
+.col-sm-8 .btn-warning:hover{
+  background-color: #f0ad4e;
+}
+
+.col-sm-8 .btn-default{
     color: #333;
     background-color: #fff;
     border-color: #24753f;
@@ -103,10 +141,21 @@ a:hover { color: #3AC569; text-decoration: none;}
     width: 160px;
 }
 
-.no-item .btn:hover{
-  background-color: #fff;
+
+.read-qna{
+  height: 80px;
+  border-bottom: 2px solid #f0f0f0;
+  padding:5px;
 }
 
+.read-title{
+  font-size: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.answer-title{
+    font-size: 15px;
+}
 /* Remove the navbar's default rounded borders and increase the bottom margin */
 .navbar {
   margin-bottom: 50px;

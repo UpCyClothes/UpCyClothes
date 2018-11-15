@@ -6,7 +6,6 @@ $user_id = checkID();
 if($user_id==False){
   echo "로그인 후 이용바랍니다.";
 }else{
-  //echo $user_id.$p_name;
   echo deleteCart($user_id,$p_name);
 }
 
