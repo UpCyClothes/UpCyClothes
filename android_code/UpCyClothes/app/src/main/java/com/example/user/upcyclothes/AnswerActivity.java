@@ -71,9 +71,11 @@ public class AnswerActivity extends AppCompatActivity {
             else {
                 unread[i]=false;
             }
+            Log.v("unread"+i+"번째 값", unread[i]+"이다.");
         }
 
         messAdapter mAdapter = new messAdapter(title, unread);
+
         //정보를 보내줍니다.
 
         mListView.setAdapter(mAdapter);

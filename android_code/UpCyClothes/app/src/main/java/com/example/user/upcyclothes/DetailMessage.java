@@ -47,6 +47,7 @@ public class DetailMessage extends AppCompatActivity {
         contentTV.setText(content);
         final TextView answerTV = (TextView) findViewById(R.id.answerTV);
         if(answer!=null){
+            answerTV.setBackgroundResource(R.drawable.green_rect);
             answerTV.setText(answer);
         }
 

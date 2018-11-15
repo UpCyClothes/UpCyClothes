@@ -59,6 +59,9 @@ public class messAdapter extends BaseAdapter {
         if(unread[position]){
             newBtn.setVisibility(View.VISIBLE);
         }
+        else {
+            newBtn.setVisibility(View.INVISIBLE);
+        }
 
         return convertView;
     }

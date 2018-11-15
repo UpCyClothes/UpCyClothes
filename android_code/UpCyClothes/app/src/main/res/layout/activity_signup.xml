@@ -512,7 +512,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/addrET"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
@@ -528,7 +528,7 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <TextView
                             android:id="@+id/addrET1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

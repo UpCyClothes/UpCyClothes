@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -45,8 +46,8 @@ public class SignupActivity extends AppCompatActivity {
     private String tag2="";
     private String phn1="";
     private boolean nickBtnOption=true;
-    private EditText addrText1;
-    private EditText addrText2;
+    private TextView addrText1;
+    private TextView addrText2;
     private EditText addrText3;
 
     ArrayAdapter adapter0;
@@ -94,8 +95,8 @@ public class SignupActivity extends AppCompatActivity {
         final EditText passwordText2 = (EditText) findViewById(R.id.pwET2);
         passwordText2.setInputType(InputType.TYPE_CLASS_TEXT| InputType.TYPE_TEXT_VARIATION_PASSWORD);
         final EditText nickText = (EditText) findViewById(R.id.nickET);
-        addrText1 = (EditText) findViewById(R.id.addrET);
-        addrText2 = (EditText) findViewById(R.id.addrET1);
+        addrText1 = (TextView) findViewById(R.id.addrET);
+        addrText2 = (TextView) findViewById(R.id.addrET1);
         addrText3 = (EditText) findViewById(R.id.addrET2);
 
         final Spinner phnSpn1= (Spinner) findViewById(R.id.phn1);
