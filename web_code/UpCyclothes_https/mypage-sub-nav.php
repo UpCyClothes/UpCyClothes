@@ -1,6 +1,14 @@
 <aside class="sidenav" style="float:left">
   <div class="side-nav-title">
-    <i>MY MENU</i>
+    <?php
+    include '../../control/controller.php';
+    include '../../control/qna-controller.php';
+    $userName = getUserName();
+    echo "<i class=\"icon\"><img src=\"../icon-64/welcome.png\"> </i>";
+    echo "<br><p>$userName 님, 환영합니다!</p>";
+    echo "<i>MY MENU</i>";
+     ?>
+
   </div>
   <div class="side-nav-div">
     <!--주문 사이드 메뉴-->
@@ -24,7 +32,14 @@
       </b>
       <br>
       <div class="nav-submenu">
-        <a class="sub-a-tag" href="../messenger/messenger.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;메시지</a>
+        <a class="sub-a-tag" href="../messenger/messenger.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:1 문의&nbsp;</a>
+        <?php
+        //userID가 같으면서, readmark가 2인 것이 있으면 new 띄우면 됨.
+        $isNew = isNew();
+        if($isNew==1){
+        echo "<i class=\"icon\"><img src=\"../icon-16/new.png\"> </i>";
+        }
+         ?>
       </div>
       <div class="nav-submenu">
         <a class="sub-a-tag" href="../notice/notice.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;공지사항</a>
@@ -53,11 +68,17 @@
         <a class="sub-a-tag" href="../member/modify.php">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;주소록(배송지)수정</a>
       </div>
       <?php
-      include '../../control/controller.php';
+      $isNewQNA = isNewQNA();
 
       if(checkType()==true){
         echo "<div class=\"nav-submenu\">";
         echo "<a class=\"sub-a-tag\" href=\"../designer-product/designer-product-list.php\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상품 등록 현황</a>";
+        echo "</div>";
+        echo "<div class=\"nav-submenu\">";
+        echo "<a class=\"sub-a-tag\" href=\"../messenger/answer.php\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1:1 문의 답변하기&nbsp;</a>";
+        if($isNewQNA==1){
+        echo "<i class=\"icon\"><img src=\"../icon-16/new.png\"> </i>";
+        }
         echo "</div>";
       }
        ?>

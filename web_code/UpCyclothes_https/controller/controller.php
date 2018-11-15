@@ -17,7 +17,7 @@
     }
   }
 
-  function Encrypt($str, $secret_key='secret key', $secret_iv='secret iv')
+function Encrypt($str, $secret_key='secret key', $secret_iv='secret iv')
   {
       //echo "in the encrypt fn";
       $key = hash('sha256', $secret_key);
@@ -72,7 +72,7 @@
     }
   }
 
-  function register($id,$password,$name,$userType,$nickname,$address1,$address2,$zipcode,$tel,$email,$reception, $tag1, $tag2){
+function register($id,$password,$name,$userType,$nickname,$address1,$address2,$zipcode,$tel,$email,$reception, $tag1, $tag2){
 
     $secret_key="123456789";
     $secret_iv="#$%^*()";
@@ -131,7 +131,8 @@ function modifyUser($address1,$address2,$zipCode){
       echo("<script>alert('정보를 확인 후 다시 시도해주세요.');</script>");
     }
 }
-  function checkLogin(){
+
+function checkLogin(){
       session_start();
       if(isset($_SESSION['userId']) && isset($_SESSION['userPassword'])){
           //로그인 하면 트루
@@ -219,6 +220,30 @@ function modifyUser($address1,$address2,$zipCode){
       }
   }
 
-
+function getUserName(){
+  session_start();
+  if(isset($_SESSION['userId']) && isset($_SESSION['userPassword'])){
+      //DB에서 이름 찾아서 넣어주기
+      $user_id = $_SESSION['userId'];
+      $mysqli = mysqli_connect( "localhost", "root", "316011" ,"upcyclothes_db");
+      $mysqli->set_charset('utf8');
+      if($mysqli){
+        $getIDSQL = "SELECT userName FROM user WHERE userID ='".$user_id."'";
+        //echo $updateSQL;
+       $result = mysqli_query($mysqli,$getIDSQL);
+        if(mysqli_num_rows($result)){
+            $row = mysqli_fetch_array($result);
+            return $row[0];
+          }else{
+            return "ID-ERROR";
+          }
+      }else{
+          return 'sorry. DataBase is not connection.';
+      }
+  }else{
+      //로그인 안했으면 false
+      return "ERROR";
+  }
+}
 
 ?>

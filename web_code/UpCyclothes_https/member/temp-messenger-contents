@@ -20,7 +20,7 @@
            // 데이터를 JSON으로 파싱
     			 var json = JSON.parse(data);
     			 if(json.num_results > 1){
-
+             console.log("big");
     				 alert(json.items[0].title);
     			 }else{
              console.log(json);
@@ -50,7 +50,7 @@
             $designerName = $designerArray[$count];
             echo "<div class=\"designer-name\">";
             echo "<i class=\"icon\"><img src=\"../icon-64/user.png\"></i>";
-            //echo "<span style=\"cursor:pointer;\" onclick=\"location.href='./messenger-detail.php?id=$designerName'\">$designerName</span>";
+            // echo "<span style=\"cursor:pointer;\" onclick=\"location.href='./messenger-detail.php?id=$designerName'\">$designerName</span>";
             echo "<span style=\"cursor:pointer;\" onclick=\"clickDesigner('$designerName')\">$designerName</span>";
             echo "</div>";
             $repeatNum = $repeatNum-1;

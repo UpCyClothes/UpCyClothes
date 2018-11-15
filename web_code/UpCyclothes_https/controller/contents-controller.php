@@ -140,6 +140,25 @@ function getthumbnail($productID){
   mysql_close($mysqli);
 }
 
+function getQuantity($productID){
+  $mysqli = mysqli_connect( "localhost", "root", "316011" ,"upcyclothes_db");
+  $mysqli->set_charset('utf8');
+  if($mysqli){
+      $sql = "SELECT * from Product Where productID =";
+      $sql = $sql.$productID;
+      $result = mysqli_query($mysqli,$sql);
+      $array = mysqli_fetch_array($result);
+      if(mysqli_num_rows($result)==0){
+        return $productID;
+      }else{
+       return $array[7];
+      }
+    }else {
+      return 'sorry. DataBase is not connection.';
+    }
+  mysql_close($mysqli);
+}
+
 /* new item list's function */
 
 function getNewProduct(){
