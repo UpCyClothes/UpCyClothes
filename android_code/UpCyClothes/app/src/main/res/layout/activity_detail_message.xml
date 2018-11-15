@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <include
+        android:id="@+id/l1"
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+
+
+    <LinearLayout
+        android:id="@+id/loginL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/l1"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/logo_ucc" />
+        <TextView
+            android:id="@+id/itemInfo"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:background="@drawable/rect"
+            android:hint=" 아이템정보 들어가는 부분"
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/subjectET"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect"
+            android:textColor="@color/colorBlack"
+            android:hint=" 제목이 들어가는 부분."
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/contentET"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect"
+            android:hint=" 내용이 들어가는 부분"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/answerTV"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rect"
+            android:hint=" 아직 답변이 없습니다."
+            android:textColor="@color/colorBlack"
+            android:textSize="20dp" />
+
+        <Button
+            android:id="@+id/completeBtn"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/colorMain"
+            android:text="확인"
+            android:textColor="@color/colorWhite" />
+
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

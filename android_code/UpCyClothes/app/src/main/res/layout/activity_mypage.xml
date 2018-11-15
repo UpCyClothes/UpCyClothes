@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/toolbar"
+        android:id="@+id/l1"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="       마이페이지"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp"
+        android:background="@color/colorMain"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/idTV"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="30dp"
+        android:text="고객님 이름 들어가는 자리"
+        android:textSize="30dp"
+        android:textColor="@color/colorBlack"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:text="나의 쇼핑 활동"
+        android:textSize="25dp"
+        android:textColor="@color/colorBlack"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect"
+            android:text="   장바구니"
+            android:id="@+id/mycartBtn"
+            android:textAlignment="textStart"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect"
+            android:text="   주문 내역 조회"
+            android:id="@+id/orderBtn"
+            android:textAlignment="textStart"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect"
+            android:text="   1:1 문의"
+            android:id="@+id/messengerBtn"
+            android:textAlignment="textStart"/>
+
+            <ImageView
+                android:id="@+id/newBtn"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/newitem"
+                android:visibility="invisible" />
+        </RelativeLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rect"
+            android:text="   로그아웃"
+            android:id="@+id/logoutBtn"
+            android:textAlignment="textStart"/>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/rl1"
+            android:visibility="invisible">
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rect"
+                android:text="   1:1 문의 답변"
+                android:id="@+id/answerBtn"
+                android:textAlignment="textStart"/>
+
+            <ImageView
+                android:id="@+id/newBtn4Answer"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/newitem"
+                android:visibility="invisible" />
+        </RelativeLayout>
+
+</LinearLayout>
+</LinearLayout>
