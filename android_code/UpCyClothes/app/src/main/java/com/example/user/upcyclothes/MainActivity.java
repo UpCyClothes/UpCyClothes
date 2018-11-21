@@ -23,6 +23,10 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 
+
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +34,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     static String userID;
+    static boolean pushFlag=false;
     String[] p_id_list;
     String[] p_name_list;
     String[] p_designer_list;
@@ -51,6 +56,7 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         LetsConnect c = new LetsConnect();
         c.getItemInfo();
@@ -76,6 +82,23 @@ public class MainActivity extends AppCompatActivity
 
         if(sessID!=null){
             Log.v("sessID",sessID);
+//            //앱푸시알림 받을건지 다이얼로그로 값 받기.
+//            new AlertDialog.Builder(this)
+//                    .setIcon(android.R.drawable.ic_dialog_alert)
+//                    .setTitle("푸시 알림")
+//                    .setMessage("푸시 알림을 활성화 하시겠습니까?")
+//                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+//                    {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            pushFlag=true;
+//                        }
+//                    })
+//                    .setNegativeButton("No", null)
+//                    .show();
+
+            FirebaseMessaging.getInstance().subscribeToTopic("news");
+            FirebaseInstanceId.getInstance().getToken();
 
             LetsConnect connect = new LetsConnect();
             connect.loggedORNot(URL,sessID);

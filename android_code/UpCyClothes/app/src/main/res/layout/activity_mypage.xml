@@ -46,6 +46,13 @@
         android:layout_marginBottom="10dp"
         android:orientation="vertical">
         <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rect"
+        android:text="   개인정보수정"
+        android:id="@+id/modifyBtn"
+        android:textAlignment="textStart"/>
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rect"

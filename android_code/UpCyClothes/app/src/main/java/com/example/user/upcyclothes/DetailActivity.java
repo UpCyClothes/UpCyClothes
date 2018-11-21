@@ -181,14 +181,47 @@ public class DetailActivity extends AppCompatActivity {
         orderBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Go to Next Activity*/
+                if(MainActivity.userID==null){
+                    //로그인이 필요한 서비스입니다. 창 띄워주기.
+                    Log.v("userid는  ",user_ID+"없다.");
+                    new AlertDialog.Builder(DetailActivity.this)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .setTitle("알림")
+                            .setMessage("로그인이 필요한 서비스입니다.")
+                            .setPositiveButton("Yes", new DialogInterface.OnClickListener()
+                            {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(DetailActivity.this, LoginActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+                            })
+                            .show();
 
-                Intent intent = new Intent(DetailActivity.this, MainActivity.class);
-                //intent.putExtra("amount",name );
-                //intent.putExtra("userID",userID);
-                startActivity(intent);
-                finish();
+                }
+                else if(cnt==0){
+                    Log.v("수량이  ",cnt+"이다.");
+                    android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(DetailActivity.this);
+                    dialog = builder.setMessage("수량이 0이면 주문을 할 수 없습니다!").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
 
+                        }
+                    }).create();
+                    dialog.show();
+                }
+                else {
+                    Intent intent = new Intent(DetailActivity.this, OrderActivity.class);
+
+                    intent.putExtra("item id",id );
+                    intent.putExtra("item name",name );
+                    intent.putExtra("item cnt",cnt );
+                    intent.putExtra("totPrice",totPrice);
+                    intent.putExtra("url",url);
+                    startActivity(intent);
+                    finish();
+                }
             }
         });
         messengerBtn.setOnClickListener(new View.OnClickListener() {

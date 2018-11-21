@@ -17,6 +17,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+import com.google.firebase.iid.FirebaseInstanceId;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -30,7 +36,7 @@ public class LoginActivity extends Activity {
     private Button loginBtn;
     private Button joinBtn ;
     private TextView chkTV;
-
+    private String token;
     private String cookieString="";
     private CookieManager cookieManager;
     private String url="https://upcyclothes.duckdns.org";
@@ -86,6 +92,34 @@ public class LoginActivity extends Activity {
                 //로그인 성공시 다시 홈 액티비티로
                 if(success.equals("1")) {
                     MainActivity.userID=user_id;
+                    //현재 데이터베이스에 유저 row에 token 값 넣기 (맨처음 로그인일 경우만)
+                    token=FirebaseInstanceId.getInstance().getToken();
+
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+                        @Override
+                        public void onResponse(String response) {
+                            try
+                            {
+                                Log.v("response",response);
+                                JSONObject jsonResponse = new JSONObject(response);
+                                boolean success = jsonResponse.getBoolean("success");
+                                if (success) {
+
+                                }
+                                else{
+
+                                }
+                            }
+                            catch (Exception e){
+                                e.printStackTrace();
+                            }
+                        }
+                    };
+                    RegisterRequest registerRequest = new RegisterRequest(MainActivity.userID, token, responseListener);
+                    RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
+                    queue.add(registerRequest);
+
                     Log.v("메인엑티비티에 유저아이디","세팅");
                     Intent resultIntent = new Intent(LoginActivity.this,MainActivity.class);
                     resultIntent.putExtra("sessID",cookieString);

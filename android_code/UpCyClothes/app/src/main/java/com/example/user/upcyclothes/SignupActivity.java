@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
 
-    public static final Pattern VALID_PASSWOLD_REGEX_ALPHA_NUM = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{8,16}$"); // 4자리 ~ 16자리까지 가능
+    public static final Pattern VALID_PASSWOLD_REGEX_ALPHA_NUM = Pattern.compile("^[a-zA-Z][0-9][!@.#$%^&*?_~]{8,16}$"); // 8자리 ~ 16자리까지 가능
 
     private AlertDialog dialog;
     private boolean idValidate = false;
