@@ -11,12 +11,6 @@
     android:background="@drawable/rect"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:id="@+id/l1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
 
 
         <TextView
@@ -27,39 +21,23 @@
             android:textColor="@color/colorBlack"
             android:textSize="30dp" />
         <TextView
-            android:id="@+id/dateTV"
+            android:id="@+id/statusTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"
-            android:text="날짜들어가는 곳"
+            android:text="주문상태"
             android:textColor="@color/colorBlack"
             android:textSize="15dp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal"
+    <TextView
+        android:id="@+id/dateTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
-        android:id="@+id/l2">
+        android:layout_marginBottom="10dp"
+        android:text="날짜들어가는 곳"
+        android:textColor="@color/colorBlack"
+        android:textSize="15dp" />
 
-        <ImageView
-            android:id="@+id/itemImg"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/nonselect"
-            android:layout_weight="1"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            >
+
             <TextView
                 android:id="@+id/itemNameTV"
                 android:layout_width="match_parent"
@@ -68,22 +46,27 @@
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/detailL"
+    android:visibility="gone">
+    <TextView
+        android:id="@+id/detailtemNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상품 이름 디테일"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp"
+        />
+</LinearLayout>
 
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            android:layout_weight="1"
-            >
-            <TextView
+    <TextView
                 android:id="@+id/priceTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="상품 가격"
-                android:layout_marginTop="10dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"/>
 
@@ -92,13 +75,31 @@
                 android:id="@+id/amountTV"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:text="수량 몇개"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp" />
+    <TextView
 
-        </LinearLayout>
-    </LinearLayout>
+        android:id="@+id/addrTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="배송지"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp" />
+    <TextView
 
+        android:id="@+id/phnTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="연락처와 이름"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp" />
+
+<Button
+    android:id="@+id/deleteBtn"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:text="주문취소"
+    />
 
 </LinearLayout>

@@ -40,6 +40,9 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
     public void onMessageReceived(RemoteMessage remoteMessage) {
 
+          if(MainActivity.pushFlag==false){
+            return;
+            }
         Log.d(TAG, "From: " + remoteMessage.getFrom());
 
 
@@ -66,7 +69,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
 
-            sendNotification(remoteMessage.getNotification().getBody());
+                sendNotification(remoteMessage.getNotification().getBody());
 
         }
 

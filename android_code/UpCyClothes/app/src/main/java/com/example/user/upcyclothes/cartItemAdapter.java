@@ -21,13 +21,11 @@ import java.util.ArrayList;
 
 public class cartItemAdapter  extends ArrayAdapter implements View.OnClickListener{
 
-    private Context context;
-
     private String[] itemName;
     private String[] price;
     private String[] amount;
     private String[] url;
-    boolean selectChk=false;
+    static Boolean[] selectChk;
 
     Button deleteBtn;
     public interface ListBtnClickListener {
@@ -42,9 +40,12 @@ public class cartItemAdapter  extends ArrayAdapter implements View.OnClickListen
 
 
     // ListViewBtnAdapter 생성자. 마지막에 ListBtnClickListener 추가.
-    cartItemAdapter(Context context, int resource, String[] s1,String[] s2, String[] s3, String s4[],  ListBtnClickListener clickListener) {
+    cartItemAdapter(Context context, int resource, String[] s1,String[] s2, String[] s3, String[] s4,  ListBtnClickListener clickListener) {
         super(context, resource) ;
-
+        selectChk=new Boolean[s1.length];
+        for(int i=0;i<s1.length;i++){
+            selectChk[i]=false;
+        }
         // resource id 값 복사. (super로 전달된 resource를 참조할 방법이 없음.)
         this.resourceId = resource ;
 
@@ -54,16 +55,7 @@ public class cartItemAdapter  extends ArrayAdapter implements View.OnClickListen
         this.amount=s3;
         this.url=s4;
     }
-//
-//    public  cartItemAdapter (Context con, String[] s1, String[] s2, String[] s3, String[] s4){
-//
-//        this.context=con;
-//
-//        this.itemName=s1;
-//        this.price=s2;
-//        this.amount=s3;
-//        this.url=s4;
-//    };
+
     @Override
     public int getCount() {
         return itemName.length;
@@ -122,7 +114,7 @@ public class cartItemAdapter  extends ArrayAdapter implements View.OnClickListen
             public void onClick(View v) {
                    //selectBtn.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.select));
                     //selectBtn.setImageResource(R.drawable.select);
-                    selectChk = false;
+                    selectChk[pos] = false;
                     selectBtn.setVisibility(View.INVISIBLE);
                     nonselectBtn.setVisibility(View.VISIBLE);
                     Log.v("선택버튼","비활성화");
@@ -132,7 +124,7 @@ public class cartItemAdapter  extends ArrayAdapter implements View.OnClickListen
             public void onClick(View v) {
                 //selectBtn.setImageDrawable(ContextCompat.getDrawable(context,R.drawable.select));
                 //selectBtn.setImageResource(R.drawable.select);
-                selectChk = true;
+                selectChk[pos] = true;
                 selectBtn.setVisibility(View.VISIBLE);
                 nonselectBtn.setVisibility(View.INVISIBLE);
                 Log.v("선택버튼","활성화");

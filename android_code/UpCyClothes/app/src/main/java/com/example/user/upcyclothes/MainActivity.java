@@ -1,8 +1,10 @@
 package com.example.user.upcyclothes;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -34,7 +36,7 @@ import org.json.JSONObject;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     static String userID;
-    static boolean pushFlag=false;
+    static boolean pushFlag;
     String[] p_id_list;
     String[] p_name_list;
     String[] p_designer_list;
@@ -51,11 +53,40 @@ public class MainActivity extends AppCompatActivity
     private boolean sessChk=false;
     private String URL="https://upcyclothes.duckdns.org";
 
-
+    private String sessID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //최초 실행 여부 판단하는 구문
+        SharedPreferences pref = getSharedPreferences("isFirst", Activity.MODE_PRIVATE);
+        boolean first = pref.getBoolean("isFirst", false);
+        if(first==false){
+            Intent in= new Intent(MainActivity.this,tutorialActivity.class);
+            startActivity(in);
+
+            Log.v("Is first Time?", "first");
+            SharedPreferences.Editor editor = pref.edit();
+            editor.putBoolean("isFirst",true);
+            editor.commit();
+            android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(MainActivity.this);
+            android.support.v7.app.AlertDialog dialog = builder.setMessage("푸시 알림을 허용하시겠습니까?").setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    Log.v("푸시알림인메인", "허용");
+                    pushFlag=true;
+                }
+
+            })
+                    .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Log.v("푸시알림인메인", "비허용");
+                            pushFlag=false;
+                        }
+                    }).create();
+            dialog.show();
+        }
 
 
         LetsConnect c = new LetsConnect();
@@ -76,27 +107,10 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //로그인 결과로 세션아이디 받으면
-        Intent intent = getIntent();
-        String sessID=intent.getStringExtra("sessID");
 
         if(sessID!=null){
             Log.v("sessID",sessID);
-//            //앱푸시알림 받을건지 다이얼로그로 값 받기.
-//            new AlertDialog.Builder(this)
-//                    .setIcon(android.R.drawable.ic_dialog_alert)
-//                    .setTitle("푸시 알림")
-//                    .setMessage("푸시 알림을 활성화 하시겠습니까?")
-//                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-//                    {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            pushFlag=true;
-//                        }
-//                    })
-//                    .setNegativeButton("No", null)
-//                    .show();
-
+//
             FirebaseMessaging.getInstance().subscribeToTopic("news");
             FirebaseInstanceId.getInstance().getToken();
 
@@ -127,10 +141,7 @@ public class MainActivity extends AppCompatActivity
                 //name = fname.getText().toString();
                 if(userID==null) {
                     Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                    //intent.putExtra("sauce name",name );
-                    //intent.putExtra("userID",userID);
-                    startActivity(intent);
-                    finish();
+                    startActivityForResult(intent,3000);
                 }
                 else{
                     //마이페이지 고고
@@ -149,11 +160,14 @@ public class MainActivity extends AppCompatActivity
                 //Log.v("userID",userID);
 
                 //name = fname.getText().toString();
-
-                Intent intent = new Intent(MainActivity.this, MycartActivity.class);
-                startActivity(intent);
-                //finish();
-
+                if(userID==null) {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivityForResult(intent,3000);
+                }
+                else {
+                    Intent intent = new Intent(MainActivity.this, MycartActivity.class);
+                    startActivity(intent);
+                }
             }
         });
 
@@ -189,30 +203,11 @@ public class MainActivity extends AppCompatActivity
             intent.putExtra("item price", p_price_list[arg2]);
             intent.putExtra("item url", p_url_list[arg2]);
             intent.putExtra("item detail url", p_detailUrl_list[arg2]);
+            intent.putExtra("item quantity", p_quantity_list[arg2]);
             startActivity(intent);
         }
     };
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            new AlertDialog.Builder(this)
-                    .setIcon(android.R.drawable.ic_dialog_alert)
-                    .setTitle("Closing Application")
-                    .setMessage("Are you sure you want to close this application?")
-                    .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                    {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            finish();
-                        }
-                    })
-                    .setNegativeButton("No", null)
-                    .show();
-        }
-        }
+
 
 
     @Override
@@ -263,7 +258,17 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        if(resultCode== RESULT_OK){
+            //요청할 때 보낸 요청코드 (3000)
+            switch(requestCode) {
+                case 3000:
+                    //로그인 결과로 세션아이디 받으면
+                    sessID=data.getStringExtra("sessID");
+                    break;
+            }
+        }
+    }
     private class LetsConnect {
 
         protected void loggedORNot(String url,String sessID) {

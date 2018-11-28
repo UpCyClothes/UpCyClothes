@@ -50,12 +50,42 @@ public class DetailMessage extends AppCompatActivity {
             answerTV.setBackgroundResource(R.drawable.green_rect);
             answerTV.setText(answer);
         }
+        //툴바의 버튼
+        // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
+        final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);
+        final ImageView personBtn= (ImageView) findViewById(R.id.personBtn);
+        //새로운 문의가 있을 경우에 보여지고 없으면 안보여진다.
 
+        //툴바 버튼리스너
+        personBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    //마이페이지 고고
+                    Intent intent = new Intent(DetailMessage.this, MypageActivity.class);
+                    //intent.putExtra("sauce name",name );
+                    //intent.putExtra("userID",userID);
+                    startActivity(intent);
+                }
+
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                    Intent intent = new Intent(DetailMessage.this, MycartActivity.class);
+                    startActivity(intent);
+                }
+
+        });
         Button completeBtn = (Button) findViewById(R.id.completeBtn);
         completeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //다하면 finish.
+                Intent intent = new Intent(DetailMessage.this, MypageActivity.class);
+                startActivity(intent);
                finish();
 
 

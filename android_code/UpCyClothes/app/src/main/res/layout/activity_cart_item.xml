@@ -11,7 +11,7 @@
     android:background="@drawable/rect"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,22 +21,26 @@
             android:id="@+id/nonselectBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/nonselect" />
         <ImageView
             android:id="@+id/selectBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
             android:src="@drawable/select"
             android:visibility="invisible"/>
 
         <TextView
             android:id="@+id/selectTV"
+            android:layout_toRightOf="@+id/nonselectBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
             android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/nonselectBtn"
+            android:layout_centerVertical="true"
             android:text="선택"
             android:textColor="@color/colorBlack"
             android:textSize="20dp" />
@@ -54,7 +58,7 @@
             android:text="삭제"
             android:textSize="20dp" />
         </LinearLayout>
-        </LinearLayout>
+        </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
