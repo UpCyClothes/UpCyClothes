@@ -94,7 +94,7 @@ public class URLConnector extends Thread {
             if(sessID!=null){
                 //셋쿠키 해주셈
                 conn.setRequestProperty("Cookie",this.sessID);
-                //Log.v("셋쿠키했더","ㅋㅋㅋ");
+                Log.v("셋쿠키했더","ㅋㅋㅋ");
             }
             //conn.setRequestProperty("Content-Type", "application/json");
             conn.setReadTimeout(5000);
@@ -119,13 +119,15 @@ public class URLConnector extends Thread {
 
             //맨처음 로그인할때
             if(sessID==null && forLogin) {
+
+                Log.v("맨 처음 로그인할때", "11");
                 for (int i = 1; (key = conn.getHeaderFieldKey(i)) != null; i++) {
                     if (key.equalsIgnoreCase("Set-Cookie")) {
                         cookieString = conn.getHeaderField(key);
                         cookieString = cookieString.substring(0, cookieString.indexOf(";"));
                     }
                 }
-                //Log.v("현재 쿠키스트링 저장함", cookieString);
+                Log.v("현재 쿠키스트링 저장함", cookieString);
             }
 
             int resCode = conn.getResponseCode();

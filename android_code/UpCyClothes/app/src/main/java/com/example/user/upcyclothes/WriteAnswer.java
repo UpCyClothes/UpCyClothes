@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -31,6 +32,32 @@ public class WriteAnswer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_answer);
+        //툴바의 버튼
+        // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
+        final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);
+        final ImageView personBtn= (ImageView) findViewById(R.id.personBtn);
+        //새로운 문의가 있을 경우에 보여지고 없으면 안보여진다.
+
+        //툴바 버튼리스너
+        personBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    //마이페이지 고고
+                    Intent intent = new Intent(WriteAnswer.this, MypageActivity.class);
+                    //intent.putExtra("sauce name",name );
+                    //intent.putExtra("userID",userID);
+                    startActivity(intent);
+                }
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    Intent intent = new Intent(WriteAnswer.this, MycartActivity.class);
+                    startActivity(intent);
+                }
+        });
         Intent intent = getIntent();
         messengerID = (intent.getStringExtra("messengerID"));
 
@@ -55,10 +82,16 @@ public class WriteAnswer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 answer=answerET.getText().toString();
+                if(answer.equals("")){
+                    Toast.makeText(WriteAnswer.this,"답변을 입력해주세요.", Toast.LENGTH_LONG).show();
+                    return;
+                }
                 //메신저디비에 answer와 readmark=2로 업데이트한다.
                 //다하면 finish.
                 letsConnect.updateAnswer();
 
+                Intent intent = new Intent(WriteAnswer.this,MypageActivity.class);
+                startActivity(intent);
                 finish();
 
 

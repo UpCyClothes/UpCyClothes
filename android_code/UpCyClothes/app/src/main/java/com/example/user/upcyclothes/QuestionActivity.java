@@ -51,19 +51,48 @@ public class QuestionActivity extends AppCompatActivity {
         itemInfo.setText(item_name);
         final EditText subjectET = (EditText) findViewById(R.id.subjectET);
         final EditText contentET = (EditText) findViewById(R.id.contentET);
+        //툴바의 버튼
+        // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
+        final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);
+        final ImageView personBtn= (ImageView) findViewById(R.id.personBtn);
+        //새로운 문의가 있을 경우에 보여지고 없으면 안보여진다.
+
+        //툴바 버튼리스너
+        personBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    Intent intent = new Intent(QuestionActivity.this, MypageActivity.class);
+                    //intent.putExtra("sauce name",name );
+                    //intent.putExtra("userID",userID);
+                    startActivity(intent);
+                }
+
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    Intent intent = new Intent(QuestionActivity.this, MycartActivity.class);
+                    startActivity(intent);
+                }
+
+        });
         Button completeBtn = (Button) findViewById(R.id.completeBtn);
         completeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //사용자가 작성한 값을 저장한다.
                 subject = subjectET.getText().toString();
+                Log.v("subject",subject);
                 content = contentET.getText().toString();
+                Log.v("content",content);
                 userid = MainActivity.userID;
                 readOrNot="0";
                 date=getCurrentTimeStamp();
 
                 //서버에 정보를 넘긴다. date, userid, designerid,subject content item id 답변여부 0으로 세팅
-                if (subject == null || content == null) {
+                if (subject.equals("") || content.equals("")) {
                     AlertDialog.Builder builder = new AlertDialog.Builder(QuestionActivity.this);
                     dialog = builder.setMessage("제목과 내용은 필수입력사항입니다.")
                             .setPositiveButton("OK", null)

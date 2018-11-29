@@ -2,11 +2,16 @@ package com.example.user.upcyclothes;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.design.widget.NavigationView;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -58,6 +63,34 @@ public class AnswerActivity extends AppCompatActivity {
         letsConnect.getItemInfo();
 
         dataSetting();
+        //툴바의 버튼
+        // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
+        final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);
+        final ImageView personBtn= (ImageView) findViewById(R.id.personBtn);
+        //새로운 문의가 있을 경우에 보여지고 없으면 안보여진다.
+
+
+
+        //툴바 버튼리스너
+        personBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    //마이페이지 고고
+                    Intent intent = new Intent(AnswerActivity.this, MypageActivity.class);
+                    startActivity(intent);
+                }
+        });
+
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(AnswerActivity.this, MycartActivity.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     private void dataSetting() {
@@ -71,9 +104,11 @@ public class AnswerActivity extends AppCompatActivity {
             else {
                 unread[i]=false;
             }
+            Log.v("unread"+i+"번째 값", unread[i]+"이다.");
         }
 
         messAdapter mAdapter = new messAdapter(title, unread);
+
         //정보를 보내줍니다.
 
         mListView.setAdapter(mAdapter);

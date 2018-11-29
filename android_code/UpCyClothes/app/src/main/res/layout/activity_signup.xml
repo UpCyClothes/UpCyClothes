@@ -504,7 +504,8 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="left"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:id="@+id/chkAddrL">
 
 
                         <LinearLayout
@@ -512,7 +513,7 @@
                             android:layout_height="wrap_content"
                             android:orientation="horizontal">
 
-                            <EditText
+                            <TextView
                                 android:id="@+id/addrET"
                                 android:layout_width="100dp"
                                 android:layout_height="wrap_content"
@@ -528,7 +529,7 @@
 
                         </LinearLayout>
 
-                        <EditText
+                        <TextView
                             android:id="@+id/addrET1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -539,7 +540,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:background="@drawable/rect"
-                            android:hint=" 상세주소" />
+                            android:layout_marginTop="5dp"
+                            android:hint="  상세주소 입력해주세요." />
 
                     </LinearLayout>
 

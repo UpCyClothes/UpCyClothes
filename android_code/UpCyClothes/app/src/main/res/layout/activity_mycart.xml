@@ -28,9 +28,28 @@
         android:horizontalSpacing="10dp"
         android:stretchMode="spacingWidth"
         android:verticalSpacing="10dp" />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="right">
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right">
 
-
-
+    <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/selectiveOrderBtn"
+    android:text="선택 주문"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/allOrderBtn"
+        android:text="전체 주문"/>
+</LinearLayout>
+</LinearLayout>
 
 
 </LinearLayout>

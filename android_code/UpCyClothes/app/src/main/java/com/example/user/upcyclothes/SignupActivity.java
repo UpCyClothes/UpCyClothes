@@ -14,9 +14,11 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -34,7 +36,8 @@ import java.util.regex.Pattern;
 
 public class SignupActivity extends AppCompatActivity {
 
-    public static final Pattern VALID_PASSWOLD_REGEX_ALPHA_NUM = Pattern.compile("^[a-zA-Z0-9!@.#$%^&*?_~]{8,16}$"); // 4자리 ~ 16자리까지 가능
+    public static final Pattern VALID_PASSWOLD_REGEX_ALPHA_NUM = Pattern.compile("^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}$"); // 영숫특 8자리 ~ 16자리까지 가능
+    public static final Pattern VALID_ID_REGEX_ALPHA_NUM = Pattern.compile("^(?=.*[a-zA-Z])(?=.*[0-9]).{4,12}$"); // 영숫자 4자리 ~ 12자리까지 가능
 
     private AlertDialog dialog;
     private boolean idValidate = false;
@@ -45,10 +48,9 @@ public class SignupActivity extends AppCompatActivity {
     private String tag2="";
     private String phn1="";
     private boolean nickBtnOption=true;
-    private EditText addrText1;
-    private EditText addrText2;
+    private TextView addrText1;
+    private TextView addrText2;
     private EditText addrText3;
-
     ArrayAdapter adapter0;
     ArrayAdapter adapter1;
     Spinner spinner0;
@@ -58,35 +60,67 @@ public class SignupActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
+        //툴바의 버튼
+        // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
+        final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);
+        final ImageView personBtn= (ImageView) findViewById(R.id.personBtn);
+        //새로운 문의가 있을 경우에 보여지고 없으면 안보여진다.
 
+        //툴바 버튼리스너
+        personBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Go to Next Activity*/
+                //userID= getIntent().getStringExtra("userID");
+                //Log.v("userID",userID);
+
+                //name = fname.getText().toString();
+                if(MainActivity.userID==null) {
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                    startActivityForResult(intent,2000);
+                }
+                else{
+                    //마이페이지 고고
+                    Intent intent = new Intent(SignupActivity.this, MypageActivity.class);
+                    //intent.putExtra("sauce name",name );
+                    //intent.putExtra("userID",userID);
+                    startActivity(intent);
+                }
+            }
+        });
+        cartBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(MainActivity.userID==null) {
+                    Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
+                    startActivityForResult(intent,2000);
+                }
+                else{
+                    Intent intent = new Intent(SignupActivity.this, MycartActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
         spinner0= (Spinner) findViewById(R.id.tag0Combo);
         spinner1= (Spinner) findViewById(R.id.tag1Combo);
         final RadioGroup rg=(RadioGroup)findViewById(R.id.radioGroup1);
         RadioButton designer=(RadioButton)findViewById(R.id.designer);
         RadioButton customer=(RadioButton)findViewById(R.id.customer);
         //선택된 라디오버튼 값 반환 (회원 유형)
+        rg.check(customer.getId());
         rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 // TODO Auto-generated method stub
                 Log.v("라디오버튼"+checkedId+"이고","designer 값은 "+R.id.designer+"이다.");
 
-                if(checkedId==R.id.designer){
+                }
 
-                    adapter0 = ArrayAdapter.createFromResource(SignupActivity.this, R.array.tagForDisigner, android.R.layout.simple_spinner_dropdown_item);
-                    adapter1 = ArrayAdapter.createFromResource(SignupActivity.this, R.array.tagForDisigner, android.R.layout.simple_spinner_dropdown_item);
-                    spinner0.setAdapter(adapter0);
-                    spinner1.setAdapter(adapter0);
-                }
-                else {
-
-                    adapter0 = ArrayAdapter.createFromResource(SignupActivity.this, R.array.tagForCustomer, android.R.layout.simple_spinner_dropdown_item);
-                    adapter1 = ArrayAdapter.createFromResource(SignupActivity.this, R.array.tagForCustomer, android.R.layout.simple_spinner_dropdown_item);
-                    spinner0.setAdapter(adapter0);
-                    spinner1.setAdapter(adapter0);
-                }
-                }
         });
+        adapter0 = ArrayAdapter.createFromResource(SignupActivity.this, R.array.tagForCustomer, android.R.layout.simple_spinner_dropdown_item);
+        adapter1 = ArrayAdapter.createFromResource(SignupActivity.this, R.array.tagForCustomer, android.R.layout.simple_spinner_dropdown_item);
+        spinner0.setAdapter(adapter0);
+        spinner1.setAdapter(adapter0);
         final EditText idText = (EditText) findViewById(R.id.idET);
         final EditText nameText = (EditText) findViewById(R.id.nameET);
         final EditText passwordText = (EditText) findViewById(R.id.pwET);
@@ -94,8 +128,9 @@ public class SignupActivity extends AppCompatActivity {
         final EditText passwordText2 = (EditText) findViewById(R.id.pwET2);
         passwordText2.setInputType(InputType.TYPE_CLASS_TEXT| InputType.TYPE_TEXT_VARIATION_PASSWORD);
         final EditText nickText = (EditText) findViewById(R.id.nickET);
-        addrText1 = (EditText) findViewById(R.id.addrET);
-        addrText2 = (EditText) findViewById(R.id.addrET1);
+
+        addrText1 = (TextView) findViewById(R.id.addrET);
+        addrText2 = (TextView) findViewById(R.id.addrET1);
         addrText3 = (EditText) findViewById(R.id.addrET2);
 
         final Spinner phnSpn1= (Spinner) findViewById(R.id.phn1);
@@ -140,14 +175,14 @@ public class SignupActivity extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     if (spinner0.getSelectedItemPosition() >= 0) {
                         //선택된 항목
-                        tag1 = i + "";
+                        tag1 = i+1+ "";
                         Log.v("알림1", i + "is selected");
                     }
                 }
 
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
-                    tag1 = 0 + "";
+                    tag1 = 1 + "";
                 }
             });
 
@@ -159,7 +194,7 @@ public class SignupActivity extends AppCompatActivity {
                 public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                     if (spinner1.getSelectedItemPosition() >= 0) {
                         //선택된 항목
-                        tag2 = i + "";
+                        tag2 = i +1+ "";
                         Log.v("알림2", i + "is selected");
                     }
                 }
@@ -167,7 +202,7 @@ public class SignupActivity extends AppCompatActivity {
                 @Override
                 public void onNothingSelected(AdapterView<?> adapterView) {
 
-                    tag2 = 0 + "";
+                    tag2 = 1 + "";
                 }
             });
 
@@ -189,6 +224,11 @@ public class SignupActivity extends AppCompatActivity {
                     dialog.show();
                     return;
                 }
+                else if(!validateID(userID)){
+                    Toast.makeText(getApplicationContext(),"아이디의 형식이 맞지 않습니다. 영 대소문자, 숫자 4~12자리",Toast.LENGTH_LONG).show();
+                        return;
+                    }
+
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -324,14 +364,31 @@ public class SignupActivity extends AppCompatActivity {
                 String email="";
 
 
-                if((phnText2.length()==4) && (phnText3.length()==4)){
+                if((phnText2.length()==4 || phnText2.length()==3) && (phnText3.length()==4)){
                     //4자리인지 확인
                     phnNum=phn1+phnText2.getText().toString()+phnText3.getText().toString();;
+                }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+                    dialog = builder.setMessage("phone 번호가 형식에 맞지 않습니다.")
+                            .setNegativeButton("OK", null)
+                            .create();
+                    dialog.show();
+                    return;
                 }
 
                 if(checkEmail(emailText1.getText().toString()+"@"+emailText2.getText().toString())){
                     email= emailText1.getText().toString()+"@"+emailText2.getText().toString();
                 }
+                else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+                    dialog = builder.setMessage("email 번호가 형식에 맞지 않습니다.")
+                            .setNegativeButton("OK", null)
+                            .create();
+                    dialog.show();
+                    return;
+                }
+
 
                 if(!idValidate){
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
@@ -350,9 +407,9 @@ public class SignupActivity extends AppCompatActivity {
                     return;
                 }
 
-                if(userID.equals("") || userPassword.equals("") ||userName.equals("")||zipcode.equals("")||addr1.equals("")||addr2.equals("")||phnNum.equals("")||email.equals("")){
+                if(userID.equals("") || userPassword.equals("") ||userName.equals("")||zipcode.equals("")||addr1.equals("")||phnNum.equals("")||email.equals("")){
                     AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
-                    dialog = builder.setMessage("모든 항목이 채워지지 않았거나 phone 번호나 이메일이 형식에 맞지 않습니다.")
+                    dialog = builder.setMessage("모든 항목이 채워지지 않았습니다.")
                             .setNegativeButton("OK", null)
                             .create();
                     dialog.show();
@@ -408,9 +465,14 @@ public class SignupActivity extends AppCompatActivity {
                     addrText2.setText(data.getStringExtra("addr2"));
                     addrText2.setEnabled(false);
                     break;
+
+                case 2000:
+                    Log.v("signup","상단 버튼눌릴경우");
+                    break;
             }
         }
     }
+
     @Override
     protected void onStop(){
         super.onStop();
@@ -434,11 +496,15 @@ public class SignupActivity extends AppCompatActivity {
         return isNormal;
     }
     /**
-     비밀번호 포맷 체크
+     포맷 체크
      **/
 
     public static boolean validatePassword(String pwStr) {
         Matcher matcher = VALID_PASSWOLD_REGEX_ALPHA_NUM.matcher(pwStr);
+        return matcher.matches();
+    }
+    public static boolean validateID(String pwStr) {
+        Matcher matcher = VALID_ID_REGEX_ALPHA_NUM.matcher(pwStr);
         return matcher.matches();
     }
 }
