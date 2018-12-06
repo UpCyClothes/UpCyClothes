@@ -139,7 +139,7 @@ public class orderItemAdapter extends ArrayAdapter implements View.OnClickListen
         if (productNameList.length == 1) {
             itemNameTV.setText("제품이름 : " + productName[pos]);
         } else {
-            itemNameTV.setText("제품이름 : " + productNameList[0] + " 외 " + productNameList.length + "개");
+            itemNameTV.setText("제품이름 : " + productNameList[0] + " 외 " + (productNameList.length-1)+ "개 <더보기>");
         }
         priceTV.setText("가격 : " + totPrice[pos] + "원");
         amountTV.setText("수량 : " + quantity[pos] + "개");
@@ -158,8 +158,10 @@ public class orderItemAdapter extends ArrayAdapter implements View.OnClickListen
             public void onClick(View v) {
                     if (detailL.getVisibility() == View.VISIBLE) {
                         detailL.setVisibility(cvtView.GONE);
+                        itemNameTV.setText("제품이름 : " + productNameList[0] + " 외 " + (productNameList.length-1)+ "개 <더보기>");
                     } else {
                         detailL.setVisibility(cvtView.VISIBLE);
+                        itemNameTV.setText("제품이름 : " + productNameList[0] + " 외 " + (productNameList.length-1)+ "개 <닫기>");
                     }
 
             }

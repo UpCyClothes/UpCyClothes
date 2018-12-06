@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -162,8 +163,8 @@ public class MaterialActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_material) {
-            Intent intent = new Intent(MaterialActivity.this, MaterialActivity.class);
-            startActivity(intent);
+
+            Toast.makeText(this,"현재페이지입니다." ,Toast.LENGTH_LONG).show();
         }else if (id == R.id.nav_notice) {
             Intent intent = new Intent(MaterialActivity.this, NoticeActivity.class);
             startActivity(intent);

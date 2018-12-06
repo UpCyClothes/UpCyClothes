@@ -2,6 +2,7 @@
 
 
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -49,16 +50,23 @@
             android:textColor="@color/colorBlack"
             android:hint=" 제목이 들어가는 부분."
             android:textSize="20dp" />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
 
-        <TextView
-            android:id="@+id/contentET"
+    <TextView
+        android:id="@+id/contentET"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rect"
+        android:hint=" 내용이 들어가는 부분"
+        android:textColor="@color/colorBlack"
+        android:textSize="20dp" />
+</ScrollView>
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:textColor="@color/colorBlack"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rect"
-            android:hint=" 내용이 들어가는 부분"
-            android:textSize="20dp" />
+            android:layout_height="80dp">
         <TextView
             android:id="@+id/answerTV"
             android:layout_width="match_parent"
@@ -68,7 +76,7 @@
             android:hint=" 아직 답변이 없습니다."
             android:textColor="@color/colorBlack"
             android:textSize="20dp" />
-
+        </ScrollView>
         <Button
             android:id="@+id/completeBtn"
             android:layout_marginTop="10dp"

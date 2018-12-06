@@ -19,6 +19,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -165,8 +166,8 @@ public class BagActivity extends AppCompatActivity
             startActivity(intent);
 
         } else if (id == R.id.nav_bag) {
-            Intent intent = new Intent(BagActivity.this, BagActivity.class);
-            startActivity(intent);
+
+            Toast.makeText(this,"현재페이지입니다." ,Toast.LENGTH_LONG).show();
 
         } else if (id == R.id.nav_acce) {
             Intent intent = new Intent(BagActivity.this, AccActivity.class);
@@ -237,8 +238,8 @@ public class BagActivity extends AppCompatActivity
                         p_name_list[i]=jo.getString("productName");
                         p_designer_list[i]=jo.getString("designer");
                         p_price_list[i]=jo.getString("price");
-                        p_url_list[i]="https://upcyclothes.duckdns.org"+jo.getString("URL");
-                        p_detailUrl_list[i]="https://upcyclothes.duckdns.org"+jo.getString("content");
+                        p_url_list[i]="https://upcyclothes.duckdns.org/android"+jo.getString("URL");
+                        p_detailUrl_list[i]="https://upcyclothes.duckdns.org/android"+jo.getString("content");
                         p_quantity_list[i]=jo.getString("quantity");
                     }
                 }

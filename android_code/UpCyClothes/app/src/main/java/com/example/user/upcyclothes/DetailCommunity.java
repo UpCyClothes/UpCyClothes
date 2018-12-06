@@ -71,13 +71,13 @@ public class DetailCommunity extends AppCompatActivity {
         Button weeklyBtn= (Button)findViewById(R.id.weeklyBtn);
         Button campaignBtn= (Button)findViewById(R.id.campaignBtn);
 
-//        if(category.equals("weekly")){
-//            campaignBtn.setTextColor(getResources().getColor(R.color.colorGray));
-//        }
-//        else {
-//            weeklyBtn.setTextColor(getResources().getColor(R.color.colorGray));
-//        }
 
+        if(category.equals("weekly")){
+            campaignBtn.setTextColor(getResources().getColor(R.color.colorGray));
+        }
+        else {
+            weeklyBtn.setTextColor(getResources().getColor(R.color.colorGray));
+        }
         TextView subjectTV=(TextView)findViewById(R.id.subjectTV);
         TextView dateTV=(TextView)findViewById(R.id.dateTV);
         ImageView Img=(ImageView)findViewById(R.id.Img);

@@ -320,8 +320,8 @@ public class MainActivity extends AppCompatActivity
                         p_name_list[i] = jo.getString("itemName");
                         p_designer_list[i]=jo.getString("designer");
                         p_price_list[i] = jo.getString("price");
-                        p_url_list[i] = "https://upcyclothes.duckdns.org" + jo.getString("URL");
-                        p_detailUrl_list[i] = "https://upcyclothes.duckdns.org" + jo.getString("content");
+                        p_url_list[i] = "https://upcyclothes.duckdns.org/android" + jo.getString("URL");
+                        p_detailUrl_list[i] = "https://upcyclothes.duckdns.org/android" + jo.getString("content");
                         p_quantity_list[i]=jo.getString("quantity");
                     }
                 }

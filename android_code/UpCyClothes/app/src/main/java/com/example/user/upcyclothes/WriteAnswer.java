@@ -147,7 +147,7 @@ public class WriteAnswer extends AppCompatActivity {
                     for (int i = 0; i < ja.length(); i++) {
                         JSONObject jo = ja.getJSONObject(i);
                         productName = jo.getString("productName");
-                        url ="https://upcyclothes.duckdns.org" + jo.getString("URL");
+                        url ="https://upcyclothes.duckdns.org/android" + jo.getString("URL");
                         subject = jo.getString("messageTitle");
                         content = jo.getString("messageContent");
                         answer = jo.getString("answer");

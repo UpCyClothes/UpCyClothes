@@ -14,8 +14,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -124,6 +126,13 @@ public class MessengerActivity extends AppCompatActivity
                     }
 
             });
+
+            //문의정보가 없을 경우
+            LinearLayout emptyL = (LinearLayout)findViewById(R.id.emptyL);
+            if(messengerID.length==0){
+                emptyL.setVisibility(View.VISIBLE);
+
+            }
         }
     }
 
@@ -178,8 +187,8 @@ public class MessengerActivity extends AppCompatActivity
             startActivity(intent);
 
         }else if (id == R.id.nav_messen) {
-            Intent intent = new Intent(MessengerActivity.this, MessengerActivity.class);
-            startActivity(intent);
+
+            Toast.makeText(this,"현재페이지입니다." ,Toast.LENGTH_LONG).show();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
