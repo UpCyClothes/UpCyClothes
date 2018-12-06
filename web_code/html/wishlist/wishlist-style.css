@@ -1,0 +1,209 @@
+.wish-order{
+  text-align: right;
+  border-top: 2px solid #555;
+  padding: 10px;
+}
+
+.total{
+  font-size: 20px;
+}
+/* Remove the navbar's default rounded borders and increase the bottom margin */
+.navbar {
+  margin-bottom: 50px;
+  border-radius: 0;
+}
+
+.nav_menu ul{
+  list-style-type: none;
+}
+
+.nav_menu ul li{
+  display: inline;
+  margin-right: 10px;
+}
+
+.nav_menu a{
+  text-decoration: none;
+  color: #000000;
+  font-size: 80%;
+}
+/* Remove the jumbotron's default bottom margin */
+footer {
+  background-color: #f2f2f2;
+}
+
+/* Sub Navigation CSS part*/
+.side-nav-title{
+  background-color: #3AC569;
+  padding: 10px;
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.side-nav-div{
+    background-color: #f2f2f2;
+    height: 100%;
+    padding: 10px;
+}
+
+.sidenav{
+
+  width: 180px;
+
+}
+
+.side-nav-b{
+  padding: 20px;
+}
+
+.nav-submenu{
+  margin-top: 10px;
+}
+.sub-a-tag{
+  font-size: 13px;
+
+}
+a:link { color: #5D5D5D; text-decoration: none;}
+a:visited { color: #5D5D5D; text-decoration: none;}
+a:hover { color: #3AC569; text-decoration: none;}
+
+.nav-submenu-now{
+  margin-top: 10px;
+}
+
+.nav-submenu-now a:link { color: #3AC569; text-decoration: none;}
+.nav-submenu-now a:visited { color: #3AC569; text-decoration: none;}
+.nav-submenu-now a:hover { color: #5D5D5D; text-decoration: none;}
+
+/* Contents CSS part*/
+
+.payment-contents{
+  margin-left: 30px;
+  float: left;
+  width: 800px;
+}
+
+
+.my-page-sub{
+  float: left;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.payment-title{
+  float: left;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 8px;
+  margin-bottom: 30px;
+}
+
+.payment-title span{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.empty-msg{
+  float: left;
+  padding: 60px 0;
+  display: block;
+  color: #999;
+  font-size: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.no-item{
+  text-align: center;
+}
+
+.no-item img{
+  margin-top: 30px;
+}
+
+.no-item .btn{
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.no-item .btn-default {
+    color: #333;
+    background-color: #fff;
+    border-color: #24753f;
+    height: 40px;
+    width: 160px;
+}
+
+.no-item .btn:hover{
+  background-color: #fff;
+}
+/* display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px; */
+
+/*Other CSS Part*/
+
+.container-fluid{
+  border-radius: 0;
+}
+
+.completebtn1 {
+  width: 200px;
+  height: 50px;
+  font-size: 17px;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  font-style: bold;
+  background-color: #3AC569;
+  cursor: pointer;
+}
+.contentstitle {
+  font-size: 20px;
+}
+
+
+#line {
+  border-top: 1px solid gray;
+}
+.main_nav {margin-bottom: 10px}
+.main_nav .navbar-nav>.active>a:hover,.main_nav .navbar-nav>li>a:hover, .main_nav .navbar-nav>li>a:focus { background-color: #ffffff}
+.main_nav .navbar-nav>.active>a,.main_nav .navbar-nav>.open>a,.main_nav .navbar-nav>.open>a, .main_nav .navbar-nav>.open>a:hover,.main_nav .navbar-nav>.open>a, .main_nav .navbar-nav>.open>a:hover, .main_nav .navbar-nav>.open>a:focus { background-color: #ffffff}
+.dropdown-menu { background-color: #FFFFFF}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-color: #FFFFFF}
+.main_nav { background-image: none; }
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { background-image: none; }
+.navbar-inverse { border-color: #FFFFFF}
+.main_nav .navbar-brand { color: #000000}
+.main_nav .navbar-brand:hover { color: #3AC569}
+.main_nav .navbar-brand:focus { color: #3AC569}
+
+.main_nav .navbar-nav>li>a { color: #363636}
+.main_nav .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus { color: #3AC569}
+.main_nav .navbar-nav>.active>a,.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:hover, .navbar-inverse .navbar-nav>.open>a:focus { color: #363636}
+.main_nav .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus { color: #3AC569}
+.dropdown-menu>li>a { color: #363636}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus { color: #3ac569}
+.main_nav .navbar-nav>.dropdown>a .caret { border-top-color: #363636}
+.main_nav .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
+.main_nav .navbar-nav>.dropdown>a .caret { border-bottom-color: #363636}
+.main_nav .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
