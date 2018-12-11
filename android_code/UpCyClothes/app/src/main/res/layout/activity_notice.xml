@@ -31,34 +31,13 @@
         android:background="@color/colorMain"
         />
 
-
-
-    <LinearLayout
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabs"
+        android:theme="@style/TabTheme"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        />
 
-        <Button
-            android:id="@+id/noticeBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:text="공지사항"
-            android:textSize="20dp"
-            android:textColor="#1D5C30" />
-
-        <Button
-            android:id="@+id/faqBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#FFFFFF"
-            android:textSize="20dp"
-            android:text="FAQ"
-            android:textColor="#1D5C30" />
-
-    </LinearLayout>
 
     <android.support.v4.view.ViewPager
 

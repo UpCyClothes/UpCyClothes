@@ -20,6 +20,29 @@
         android:textSize="25dp"
         android:background="@color/colorMain"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emptyL"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        android:orientation="vertical">
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/alarm_gray"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="장바구니에 담긴 물건이 없어요!"
+        android:textSize="25dp"
+        />
+
+    </LinearLayout>
     <ListView
         android:id="@+id/listview"
         android:layout_width="match_parent"
@@ -32,6 +55,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
+    android:id="@+id/btnL"
     android:gravity="right">
 <LinearLayout
     android:layout_width="wrap_content"

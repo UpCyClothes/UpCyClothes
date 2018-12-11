@@ -361,10 +361,26 @@ public class ModifyInfo extends AppCompatActivity {
         leaveBtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
-                Log.v("왜 그냥 꺼지는거야...","");
-                LetsConnect l= new LetsConnect();
-                l.leave();
-                MainActivity.userID=null;
+                //Log.v("왜 그냥 꺼지는거야...","");
+                android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(ModifyInfo.this);
+                android.support.v7.app.AlertDialog dialog = builder.setMessage("정말로 탈퇴하시겠습니까?").setPositiveButton("YES", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Log.v("탈퇴", "허용");
+                        LetsConnect l= new LetsConnect();
+                        l.leave();
+                        MainActivity.userID=null;
+                    }
+                })
+                        .setNegativeButton("NO", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                Log.v("안탈퇴", "");
+                                return;
+                            }
+                        }).create();
+                dialog.show();
+
 
             }
         });

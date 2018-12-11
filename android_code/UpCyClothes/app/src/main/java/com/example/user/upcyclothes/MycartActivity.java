@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -136,8 +137,18 @@ public class MycartActivity  extends AppCompatActivity implements cartItemAdapte
             LetsConnect c = new LetsConnect();
             c.getItemInfo();
 
+            //장바구니에 정보가 없을 경우
+            LinearLayout emptyL = (LinearLayout)findViewById(R.id.emptyL);
+            LinearLayout btnL = (LinearLayout)findViewById(R.id.btnL);
+            if(p_cartid_list.length==0){
+                emptyL.setVisibility(View.VISIBLE);
+                btnL.setVisibility(View.INVISIBLE);
+
+            }
+
 
             ListView listView = (ListView) findViewById(R.id.listview);
+
 
             cartItemAdapter adapter= new cartItemAdapter(this,R.layout.activity_cart_item,p_name_list,p_price_list,p_amount_list,p_url_list,this);
             listView.setAdapter(adapter);
@@ -194,6 +205,19 @@ public class MycartActivity  extends AppCompatActivity implements cartItemAdapte
             allOrderBtn.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view) {
+                    if(p_id_list.length==0){
+                        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(MycartActivity.this);
+                        dialog = builder.setMessage("주문할 상품이 없습니다.").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                Intent intent1 = new Intent(MycartActivity.this,MycartActivity.class);
+                                startActivity(intent1);
+                                finish();
+                            }
+                        }).create();
+                        dialog.show();
+
+                    }
                     Intent intent =  new Intent( MycartActivity.this, NextOrderActivity.class);
                     String s1="";
                     String s2="";
@@ -316,7 +340,7 @@ public class MycartActivity  extends AppCompatActivity implements cartItemAdapte
                         p_name_list[i]=jo.getString("productName");
                         p_amount_list[i]=jo.getString("count");
                         p_price_list[i]=jo.getString("price");
-                        p_url_list[i]="https://upcyclothes.duckdns.org" + jo.getString("productURL");
+                        p_url_list[i]="https://upcyclothes.duckdns.org/android" + jo.getString("productURL");
                     }
                 }
 

@@ -51,6 +51,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/detailL"
+    android:background="@color/colorGray"
     android:visibility="gone">
     <TextView
         android:id="@+id/detailtemNameTV"

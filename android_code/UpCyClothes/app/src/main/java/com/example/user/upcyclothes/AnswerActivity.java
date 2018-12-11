@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -63,6 +64,13 @@ public class AnswerActivity extends AppCompatActivity {
         letsConnect.getItemInfo();
 
         dataSetting();
+
+        //문의정보가 없을 경우
+        LinearLayout emptyL = (LinearLayout)findViewById(R.id.emptyL);
+        if(messengerID.length==0){
+            emptyL.setVisibility(View.VISIBLE);
+
+        }
         //툴바의 버튼
         // final ImageView alarmBtn= (ImageView) findViewById(R.id.alarmBtn);
         final ImageView cartBtn= (ImageView) findViewById(R.id.cartBtn);

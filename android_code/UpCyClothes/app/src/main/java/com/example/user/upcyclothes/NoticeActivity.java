@@ -4,6 +4,7 @@ package com.example.user.upcyclothes;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class NoticeActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -34,18 +36,14 @@ public class NoticeActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notice);
 
-        noticeBtn = (Button)findViewById(R.id.noticeBtn);
-        faqBtn = (Button)findViewById(R.id.faqBtn);
-
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+        TabLayout mTab= (TabLayout) findViewById(R.id.tabs);
+        mTab.setupWithViewPager(viewPager);
 
         viewPager.setAdapter(new adapter(getSupportFragmentManager()));
         viewPager.setCurrentItem(0);
         //for fragment
-        noticeBtn.setOnClickListener(movePageListener);
-        noticeBtn.setTag(0);
-        faqBtn.setOnClickListener(movePageListener);
-        faqBtn.setTag(1);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -113,9 +111,11 @@ public class NoticeActivity extends AppCompatActivity
             int tag = (int) v.getTag();
             viewPager.setCurrentItem(tag);
 //                    if(tag==0){
+//                        noticeBtn.setTextColor(getResources().getColor(R.color.colorMain));
 //                        faqBtn.setTextColor(getResources().getColor(R.color.colorGray));
 //                    }
-//                    else{
+//                    else {
+//                        faqBtn.setTextColor(getResources().getColor(R.color.colorMain));
 //                        noticeBtn.setTextColor(getResources().getColor(R.color.colorGray));
 //                    }
         }
@@ -165,8 +165,8 @@ public class NoticeActivity extends AppCompatActivity
             Intent intent = new Intent(NoticeActivity.this, MaterialActivity.class);
             startActivity(intent);
         }else if (id == R.id.nav_notice) {
-            Intent intent = new Intent(NoticeActivity.this, NoticeActivity.class);
-            startActivity(intent);
+
+            Toast.makeText(this,"현재페이지입니다." ,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_commu) {
             Intent intent = new Intent(NoticeActivity.this, CommunityActivity.class);
             startActivity(intent);
@@ -185,6 +185,17 @@ public class NoticeActivity extends AppCompatActivity
             super(fm);
         }
 
+        @Override
+        public CharSequence getPageTitle(int position){
+            switch (position){
+                case 0:
+                    return "공지사항";
+                case 1 :
+                    return "FAQ";
+                default:
+                    return null;
+            }
+        }
         @Override
         public Fragment getItem(int position) {
             if (position < 0 || maxPage <= position)

@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import org.json.JSONArray;
@@ -97,7 +98,7 @@ public class fragmentNotice extends Fragment{
                         subject[i]=jo.getString("subject");
                         content[i]=jo.getString("content");
                         updated[i]=jo.getString("updated");
-                        noticeImg[i]="https://upcyclothes.duckdns.org"+jo.getString("noticeImg");
+                        noticeImg[i]="https://upcyclothes.duckdns.org/android"+jo.getString("noticeImg");
                     }
                 }
 
@@ -114,6 +115,8 @@ public class fragmentNotice extends Fragment{
     {
 
         v = inflater.inflate(R.layout.fragment_notice, container, false);
+
+
         ListView listview = v.findViewById(R.id.listview);
 
         listAdapter adapter= new listAdapter(this.getContext(),subject,updated);

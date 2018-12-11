@@ -12,14 +12,14 @@
         android:id="@+id/l1"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="       COMMUINITY"
-        android:textColor="@color/colorWhite"
-        android:textSize="25dp"
         android:background="@color/colorMain"
-        />
+        android:text="       COMMUNITY"
+        android:textColor="@color/colorWhite"
+        android:textSize="25dp" />
 
 
 
@@ -34,9 +34,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:text="이달의 작가"
-            android:textSize="20dp"
-            android:textColor="#1D5C30" />
+            android:text="이 달의 작가"
+            android:textColor="#1D5C30"
+            android:textSize="20dp" />
 
         <Button
             android:id="@+id/campaignBtn"

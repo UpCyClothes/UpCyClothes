@@ -24,6 +24,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,6 +66,7 @@ public class NewActivity extends AppCompatActivity
             intent.putExtra("item name", p_name_list[arg2]);
             intent.putExtra("item price", p_price_list[arg2]);
             intent.putExtra("item url", p_url_list[arg2]);
+            intent.putExtra("item quantity", "0");
             intent.putExtra("item detail url", p_detailUrl_list[arg2]);
             startActivity(intent);
         }
@@ -170,8 +172,8 @@ public class NewActivity extends AppCompatActivity
 
         if (id == R.id.nav_new) {
             // Handle the camera action
-            Intent intent = new Intent(NewActivity.this, NewActivity.class);
-            startActivity(intent);
+
+            Toast.makeText(this,"현재페이지입니다." ,Toast.LENGTH_LONG).show();
         } else if (id == R.id.nav_clo) {
             Intent intent = new Intent(NewActivity.this, ClothActivity.class);
             startActivity(intent);
@@ -252,8 +254,8 @@ public class NewActivity extends AppCompatActivity
                         p_name_list[i] = jo.getString("itemName");
                         p_designer_list[i]=jo.getString("designer");
                         p_price_list[i] = jo.getString("price");
-                        p_url_list[i] = "https://upcyclothes.duckdns.org" + jo.getString("URL");
-                        p_detailUrl_list[i] = "https://upcyclothes.duckdns.org" + jo.getString("content");
+                        p_url_list[i] = "https://upcyclothes.duckdns.org/android" + jo.getString("URL");
+                        p_detailUrl_list[i] = "https://upcyclothes.duckdns.org/android" + jo.getString("content");
                         p_quantity_list[i]=jo.getString("quantity");
                     }
                 }

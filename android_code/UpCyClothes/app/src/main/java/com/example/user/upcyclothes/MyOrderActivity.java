@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -63,8 +64,16 @@ public class MyOrderActivity  extends AppCompatActivity implements orderItemAdap
             c.getItemInfo();
 
 
+
             ListView listView = (ListView) findViewById(R.id.listview);
 
+        //주문정보가 없을 경우
+        LinearLayout emptyL = (LinearLayout)findViewById(R.id.emptyL);
+        if(p_orderID_list.length==0){
+            emptyL.setVisibility(View.VISIBLE);
+            listView.setVisibility(View.INVISIBLE);
+
+        }
             orderItemAdapter adapter= new orderItemAdapter(this,R.layout.activity_order_item,p_orderID_list
                     ,p_productName_list,p_receiverName_list,p_addr1_list,p_addr2_list,p_receiverPhn_list,p_productQuantity_list,p_date_list,p_productPrice_list,p_status_list,this);
             listView.setAdapter(adapter);

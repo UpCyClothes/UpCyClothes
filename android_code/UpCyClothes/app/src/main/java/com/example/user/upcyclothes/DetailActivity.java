@@ -232,8 +232,8 @@ public class DetailActivity extends AppCompatActivity {
                             }
                         }
                     };
-                    if (url.contains("https://upcyclothes.duckdns.org")) {
-                        url = url.replace("https://upcyclothes.duckdns.org", "");
+                    if (url.contains("https://upcyclothes.duckdns.org/android")) {
+                        url = url.replace("https://upcyclothes.duckdns.org/android", "");
                     }
                     InsertRequest insertRequest = new InsertRequest(id, user_ID, designer, name, cnt + "", totPrice + "", url,quantity, responseListener);
                     RequestQueue queue = Volley.newRequestQueue(DetailActivity.this);

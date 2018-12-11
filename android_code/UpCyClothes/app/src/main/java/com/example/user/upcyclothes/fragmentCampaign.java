@@ -100,7 +100,7 @@ public class fragmentCampaign extends Fragment{
                         subject[i]=jo.getString("subject");
                         content[i]=jo.getString("content");
                         updated[i]=jo.getString("updated");
-                        noticeImg[i]="https://upcyclothes.duckdns.org"+jo.getString("noticeImg");
+                        noticeImg[i]="https://upcyclothes.duckdns.org/android"+jo.getString("noticeImg");
                     }
                 }
 

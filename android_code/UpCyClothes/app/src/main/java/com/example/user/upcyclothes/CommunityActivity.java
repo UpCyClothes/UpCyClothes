@@ -4,6 +4,7 @@ package com.example.user.upcyclothes;
 
 import android.content.Intent;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.ViewPager;
@@ -19,6 +20,7 @@ import android.widget.Button;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 public class CommunityActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -35,18 +37,15 @@ public class CommunityActivity extends AppCompatActivity
         setContentView(R.layout.activity_community);
         userID=MainActivity.userID;
 
-        weeklyBtn = (Button)findViewById(R.id.weeklyBtn);
-        campaignBtn = (Button)findViewById(R.id.campaignBtn);
-
         viewPager = (ViewPager) findViewById(R.id.viewpager);
+
+        TabLayout mTab= (TabLayout) findViewById(R.id.tabs);
+        mTab.setupWithViewPager(viewPager);
 
         viewPager.setAdapter(new adapter(getSupportFragmentManager()));
         viewPager.setCurrentItem(0);
         //for fragment
-        weeklyBtn.setOnClickListener(movePageListener);
-        weeklyBtn.setTag(0);
-        campaignBtn.setOnClickListener(movePageListener);
-        campaignBtn.setTag(1);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -112,9 +111,18 @@ public class CommunityActivity extends AppCompatActivity
         public void onClick(View v) {
             int tag = (int) v.getTag();
             viewPager.setCurrentItem(tag);
-
+//            if(tag==0){
+//                weeklyBtn.setTextColor(getResources().getColor(R.color.colorMain));
+//                campaignBtn.setTextColor(getResources().getColor(R.color.colorGray));
+//            }
+//            else {
+//                campaignBtn.setTextColor(getResources().getColor(R.color.colorMain));
+//                weeklyBtn.setTextColor(getResources().getColor(R.color.colorGray));
+          //  }
         }
     };
+
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data){
         if(resultCode== RESULT_OK){
@@ -163,9 +171,8 @@ public class CommunityActivity extends AppCompatActivity
             Intent intent = new Intent(CommunityActivity.this, NoticeActivity.class);
             startActivity(intent);
         } else if (id == R.id.nav_commu) {
-            Intent intent = new Intent(CommunityActivity.this, CommunityActivity.class);
-            startActivity(intent);
 
+            Toast.makeText(this,"현재페이지입니다." ,Toast.LENGTH_LONG).show();
         }else if (id == R.id.nav_messen) {
             Intent intent = new Intent(CommunityActivity.this, MessengerActivity.class);
             startActivity(intent);
@@ -181,17 +188,26 @@ public class CommunityActivity extends AppCompatActivity
         }
 
         @Override
+        public CharSequence getPageTitle(int position){
+            switch (position){
+                case 0:
+                    return "이 달의 작가";
+                case 1 :
+                    return "캠페인";
+                    default:
+                        return null;
+            }
+        }
+        @Override
         public Fragment getItem(int position) {
             if (position < 0 || maxPage <= position)
                 return null;
             switch (position) {
                 case 0:
                     fragment = new fragmentWeekly();
-
                     break;
                 case 1:
                     fragment = new fragmentCampaign();
-
                     break;
             }
             return fragment;
