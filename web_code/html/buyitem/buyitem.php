@@ -201,11 +201,10 @@
 
   if($price==-1){
     $totalP = 2500;
+    $totalP = $totalP;
+    $showTotal = number_format($totalP);
   }else if($p_id!=-1){
     $totalP = $quantity*$price;
-    $showTotal = number_format($totalP);
-  }else{
-    $totalP = $price;
     $showTotal = number_format($totalP);
   }
 

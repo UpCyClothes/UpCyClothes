@@ -97,7 +97,7 @@
              <td class="info">&nbsp;&nbsp;비밀번호 재입력</td>
              <td class="memberinput">
                <input type="password" class="inputinfo2" name="password2"
-               placeholder="4~12자의 소문자 & 숫자">
+               placeholder="8~16자의 소문자 & 숫자 $ 특수문자 혼용">
 
              </td>
            </tr>
