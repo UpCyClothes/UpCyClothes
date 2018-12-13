@@ -113,7 +113,7 @@
   echo "<h4><label style=\"font-size:20px\">$name</label></h4>";
   echo "<h5><label style=\"font-size:20px\">남은 수량 $num KG</label></h5>";
   echo "<hr width =100% color=\"#000000\" align=\"left\"/>";  #선그리기
-  echo "<p> 남은 재고를 확인 후 주문해주시기 바랍니다.</p>";
+  echo "<p> 주문시 배송비로 2,500원이 부과됨을 확인하여주세요.</p>";
   echo "<hr width =100% color=\"#000000\" align=\"left\"/>";  #선그리기
 
 

@@ -57,7 +57,13 @@
     <div class="col-sm-15">
       <div class="well">
         <h4>주문목록</h4>
+        1 : 주문 접수 /
+        2 : 입금 확인 /
+        3 : 배송 준비중 /
+        4 : 배송 시작 /
+        5 : 배송 완료 // 
 
+        상품번호 : -1 다중상품
         <table class="table table-hover">
 
               <thead>
@@ -69,7 +75,8 @@
                   <th style="width:5%">수량</th>
                   <th style="width:10%">주문금액</th>
                   <th style="width:10%">주문상태</th>
-                  <th style="width:20%">기능</th>
+                  <th style="width:10%">기능</th>
+                  <th style="width:10%"></th>
                 </tr>
               </thead>
                 <tbody>
@@ -88,7 +95,8 @@
                     echo "<td>$orderArray[4]</td>";
                     echo "<td>$orderArray[5]</td>";
                     echo "<td>$orderArray[6]</td>";
-                    echo "<td><a href='./editOrderForm.php?orderID=$orderArray[0]'>수정</a></td>";
+                    echo "<td><a href='./order_update_form.php?orderID=$orderArray[0]'>수정</a></td>";
+                    echo "<td><a href='./order_delete_action.php?orderID=$orderArray[0]'>삭제</a></td>";
                     echo "</tr>";
 
                   }

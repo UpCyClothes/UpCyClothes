@@ -50,9 +50,6 @@
     <br>
 
       <div class="col-sm-9">
-      <div class="well">
-
-      </div>
 
     <div class="col-sm-18">
       <div class="well">

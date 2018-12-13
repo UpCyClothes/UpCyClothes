@@ -76,6 +76,7 @@
         var userID = document.getElementById("userID").value;
         var designerID = document.getElementById("designerID").value;
         var quantity = document.getElementById("quantity").value;
+
         p_number = parseInt(p_number);
         quantity = parseInt(quantity);
         if(p_number<=0){
@@ -118,10 +119,13 @@
     var o_price = document.getElementById("originprice").value;
     var userID = document.getElementById("userID").value;
     var designerID = document.getElementById("designerID").value;
+    var quantity = document.getElementById("quantity").value;
+    p_number = parseInt(p_number);
+    quantity = parseInt(quantity);
 
     if(p_number<=0){
         alert("옵션을 선택하세요!");
-    }else if(p_number>document.getElementById("quantity").value){
+    }else if(p_number>quantity){
       alert("주문 수량이 초과되었습니다!");
     }else if(userID==designerID){
       alert("자신의 제품은 구매할 수 없습니다.");

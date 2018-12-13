@@ -34,6 +34,13 @@
 
 <body>
 
+  <?php
+    include '../../../../control/controller.php';
+    if(checkAdmin()==false){
+      echo("<script>location.replace('../admin-login.php');</script>");
+    }
+?>
+
 <div id="header"></div>
 
 <div class="container-fluid">
@@ -58,25 +65,57 @@
                 <tbody>
                   <!--재료 게시물 php 작성 Part-->
                   <?php
-                  include "../../../../control-admin/material-controller.php";
-
-
-                  while($matArray = mysqli_fetch_array($result)){
-
-                    echo "<tr>";
-                    echo "<td>$matArray[0]</td>";
-                    echo "<td>$matArray[3]</td>";
-                    echo "<td>$matArray[1]</td>";
-                    echo "<td>$matArray[4]</td>";
-                    echo "<td><a href='./editMaterialForm.php?materialID=$matArray[0]'>수정</a></td>";
-                    echo "</tr>";
-
+                  //mysqli_connect()함수로 커넥션 객체 생성
+                  $conn = mysqli_connect("localhost", "root", "316011","upcyclothes_db");
+                  $conn->set_charset('utf8');
+                  //커넥션 객체 생성 확인
+                  if($conn) {
+                      echo "연결 성공<br>";
+                  } else {
+                      die("연결 실패 : " .mysqli_error());
                   }
 
-                  mysql_close($mysqli);
+                  //board 테이블을 조회해서 board_no, board_title, board_user, board_date 필드 값을 내림차순으로 정렬하여 모두 가져 오는 쿼리
+                  $sql = "SELECT materialID, materialName, material_Quantity, matURL FROM Material order by materialID";
+                  $result = mysqli_query($conn,$sql);
+                  //쿼리 조회 결과가 있는지 확인
+                  if($result) {
+                      echo "조회 성공";
+                  } else {
+                      echo "결과 없음: ".mysqli_error($conn);
+                  }
+
+                  while($row = mysqli_fetch_array($result)){
+              ?>
+                  <tr>
+                      <td>
+                          <?php
+                              echo $row["materialID"];
+                          ?>
+                      </td>
+                      <td>
+                          <?php
+                              echo $row["materialName"];
+                          ?>
+                      </td>
+                      <td>
+                          <?php
+                              echo $row["material_Quantity"];
+                          ?>
+                      </td>
+                      <td>
+                          <?php
+                              echo $row["matURL"];
+                          ?>
+                      </td>
+                          <?php
+                              echo "<td><a href='./material_update_form.php?materialID=".$row["materialID"]."'>수정</a></td>";
+                          ?>
+                  </tr>
+              <?php
+                  }
 
                   ?>
-
 
                 </tbody>
             </table>

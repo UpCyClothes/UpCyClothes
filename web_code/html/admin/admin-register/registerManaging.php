@@ -55,7 +55,7 @@
             <h4>등록대기상품</h4>
 
 
-            <table class="table table-hover">
+            <table class="table table-hover" style="width:100%">
 
                   <thead>
                     <tr>
@@ -89,8 +89,8 @@
                         echo "<td>$registerArray[5]</td>";
                         echo "<td>$registerArray[6]</td>";
                         echo "<td>$registerArray[7]</td>";
-                        echo "<td><a href='./registerForm.php?ID=$registerArray[0]'>등록</a></td>";
-                        echo "<td><a href='./deleteForm.php?ID=$registerArray[0]'>삭제</a></td>";
+                        echo "<td><a href='./register_form.php?ID=$registerArray[0]'>등록 확인</a></td>";
+                        echo "<td><a href='./register_delete_form.php?ID=$registerArray[0]'>삭제</a></td>";
                         echo "</tr>";
 
                       }

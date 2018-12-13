@@ -54,17 +54,7 @@
         <div class="col-sm-12">
           <div class="well">
             <h4>Users</h4>
-            <div style="text-align:right">
-              <form method=GET name=searchuser action='../../../control-admin/usersearch-controller.php.php'>
-
-                <select name="검색유형">
-                        <option name="designer" value="{$search_key}">디자이너</option>
-                        <option name="consumer">고객</option>
-                 </select>
-                <input type="submit" value="검색" onclick="searchUser()">
-                </div>
-
-              </form>
+          
 
             <table class="table table-hover">
               <thead>

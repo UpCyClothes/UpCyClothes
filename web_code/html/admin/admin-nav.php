@@ -6,7 +6,13 @@
     <li><a href="../../admin/admin-product/productManaging.php">상품관리</a></li>
     <li><a href="../../admin/admin-order/orderManaging.php">주문관리</a></li>
     <li><a href="../../admin/admin-notice/noticeManaging.php">공지사항</a></li>
-    <li><a href="../../admin/admin-community/communityManaging.php">커뮤니티</a></li>
     <li><a href="../../admin/admin-register/registerManaging.php">상품등록</a><li>
+    <li><li>
+      <li><li>
+        <li><li>
+          <li><li>
+            <li><li>
+              <li><li>
+                
   </ul><br>
 </div>

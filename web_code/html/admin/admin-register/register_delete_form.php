@@ -34,6 +34,13 @@
 
 <body>
 
+  <?php
+      include '../../../../control/controller.php';
+      if(checkAdmin()==false){
+        echo("<script>location.replace('../admin-login.php');</script>");
+      }
+  ?>
+
 <div id="header"></div>
 
 <div class="container-fluid">
@@ -43,12 +50,12 @@
 
     <div class="col-sm-9">
       <div class="well">
-        <h4>Product</h4>
+        <h4>등록 대기 상품</h4>
 
         <?php
             //productManaging.php 페이지에서 넘어온 글 번호값 저장 및 출력
-            $productID = $_GET["productID"];
-            echo $productID."번째 상품 삭제 페이지<br>";
+            $ID = $_GET["ID"];
+            echo $ID."번째 등록 대기 상품 삭제 페이지<br>";
         ?>
 
         <!-- board_delete_action.php 페이지로 post방식을 이용하여 값 전송 -->
@@ -59,11 +66,11 @@
                 </tr>
                 <tr>
                     <td><input type="text" name="admin_pw">
-                        <input type="hidden" name="productID" value="<?php echo $productID ?>">
+                        <input type="hidden" name="ID" value="<?php echo $ID?>">
                     </td>
                 </tr>
                 <tr>
-                    <td><button class="btn btn-primary" type="submit">글 삭제 버튼</td>
+                    <td><button class="btn btn-primary" type="submit">상품 삭제 버튼</td>
                 </tr>
             </table>
         </form>

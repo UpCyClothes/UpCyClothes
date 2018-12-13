@@ -44,18 +44,7 @@
 
       </div>
 
-      <div class="my-page-sub">
-        <div class="my-page-title-sub">
-          <span>등록 완료</span>
-        </div>
-        <br>
-        <?php
-        $array2 = getRegisterProductComplete();
-        $repeatNum2 = sizeof($array2);
-        $count2=0;
-        echo "<p class=\"empty-msg\">등록 완료 된 상품이 없습니다.</p>";
-        ?>
-      </div>
+    
 
     </div>
   </div>

@@ -34,6 +34,13 @@
 
 <body>
 
+  <?php
+    include '../../../../control/controller.php';
+    if(checkAdmin()==false){
+      echo("<script>location.replace('../admin-login.php');</script>");
+    }
+?>
+
 <div id="header"></div>
 
 <div class="container-fluid">
@@ -43,30 +50,31 @@
 
     <div class="col-sm-9">
       <div class="well">
-        <h4>Product</h4>
+        <h4>notice</h4>
 
         <?php
-            //productManaging.php 페이지에서 넘어온 글 번호값 저장 및 출력
-            $productID = $_GET["productID"];
-            echo $productID."번째 상품 삭제 페이지<br>";
+            //board_list.php 페이지에서 넘어온 글 번호값 저장 및 출력
+            $noticeID = $_GET["noticeID"];
+            echo $noticeID."번째 글 삭제 페이지<br>";
         ?>
-
         <!-- board_delete_action.php 페이지로 post방식을 이용하여 값 전송 -->
-        <form action="./deleteAction.php" method="post">
+        <form action="./notice_delete_action.php" method="post">
             <table class="table table-bordered" style="width:10%">
-                <tr>
-                    <td>관리자 비밀 번호를 입력하세요.</td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="admin_pw">
-                        <input type="hidden" name="productID" value="<?php echo $productID ?>">
-                    </td>
-                </tr>
+              <tr>
+                  <td>관리자 비밀 번호를 입력하세요.</td>
+              </tr>
+              <tr>
+                  <td>
+                      <input type="password" name="adminpw" placeholder="비밀번호" value=""/>
+                      <input type="hidden" name="noticeID" value="<?php echo $noticeID ?>">
+                  </td>
+              </tr>
                 <tr>
                     <td><button class="btn btn-primary" type="submit">글 삭제 버튼</td>
                 </tr>
             </table>
         </form>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
 
       </div>
     </div>
