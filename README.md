@@ -4,18 +4,10 @@ UpCycling + Clothes의 합성어로 본 프로젝트에서 제공하는 시스�
 
 ## Requirements
 ### Language
-* 
+* PHP, HTML, Java
 
 ### Tools
 * Android Studio
-* 
-
-### Dataset Description (copy from kaggle description)
-#### Context
-분석중
-
-#### Content
-분석중
 
 ## References
 * docs
