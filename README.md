@@ -1,4 +1,4 @@
-<img src="https://user-images.githubusercontent.com/28749482/78335568-cf4c1400-75c8-11ea-832e-a1f24bff31d0.PNG" width="300" height="300">
+<img src="https://user-images.githubusercontent.com/28749482/78335568-cf4c1400-75c8-11ea-832e-a1f24bff31d0.PNG" width="500">
 # UpCyClothes
 ## About
 ![architecture](https://user-images.githubusercontent.com/28749482/78335562-cce9ba00-75c8-11ea-9827-950fb4888147.png)
