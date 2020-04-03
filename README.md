@@ -1,14 +1,14 @@
-![title](https://user-images.githubusercontent.com/28749482/78335568-cf4c1400-75c8-11ea-832e-a1f24bff31d0.PNG){: width="300" }
+![title](https://user-images.githubusercontent.com/28749482/78335568-cf4c1400-75c8-11ea-832e-a1f24bff31d0.PNG){: width="70%" height="70%"}
 # UpCyClothes
 ## About
-![architecture](https://user-images.githubusercontent.com/28749482/78335562-cce9ba00-75c8-11ea-9827-950fb4888147.png){: width="300" }
+![architecture](https://user-images.githubusercontent.com/28749482/78335562-cce9ba00-75c8-11ea-9827-950fb4888147.png)
 
 UpCycling + Clothes의 합성어로 본 프로젝트에서 제공하는 시스템은 의류 업사이클링 소셜 웹 어플리케이션이다.
 동일한 역할을 하는 web과 application을 통해 고객과 디자이너는 서비스에 접근이 가능하다. 디자이너는 제품 보기 주문하기 등 재료를 사거나, 자신이 만든 제품 등록과 문의에 답변하는 추가적인 수 있다. 어플리케이션은 제품 등록을 제외한 모든 서비스가 웹과 동일하다. 
 
 ## Example
-![ex1](https://user-images.githubusercontent.com/28749482/78335565-ce1ae700-75c8-11ea-89c1-c99cbb0b5f53.png){: width="300" }
-![ex2](https://user-images.githubusercontent.com/28749482/78335566-ceb37d80-75c8-11ea-8924-09d0d5a7dc3c.png){: width="300" }
+![ex1](https://user-images.githubusercontent.com/28749482/78335565-ce1ae700-75c8-11ea-89c1-c99cbb0b5f53.png)
+![ex2](https://user-images.githubusercontent.com/28749482/78335566-ceb37d80-75c8-11ea-8924-09d0d5a7dc3c.png)
 
 ## Requirements
 
