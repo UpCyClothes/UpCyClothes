@@ -1,5 +1,8 @@
-<p align="center"><img src="https://user-images.githubusercontent.com/28749482/78335568-cf4c1400-75c8-11ea-832e-a1f24bff31d0.PNG" width="500"></p>
 # UpCyClothes
+
+
+<p align="center"><img src="https://user-images.githubusercontent.com/28749482/78335568-cf4c1400-75c8-11ea-832e-a1f24bff31d0.PNG" width="500"></p>
+
 ## About
 <p align="center"><img src="https://user-images.githubusercontent.com/28749482/78335562-cce9ba00-75c8-11ea-9827-950fb4888147.png" width="500"></p>
 UpCycling + Clothes의 합성어로 본 프로젝트에서 제공하는 시스템은 의류 업사이클링 소셜 웹 어플리케이션이다.
